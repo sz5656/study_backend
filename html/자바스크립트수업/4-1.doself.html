@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice</title>
+  <link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+  <script>
+    // 최소값~최대값 합 구하는 함수 만들기
+    let min = Number(prompt("최소값을 입력하세요"));
+    let max = Number(prompt("최대값을 입력하세요"));
+    let tmp = 0;
+    if(min > max) {
+      tmp = max;
+      max = min;
+      min = tmp;
+    }
+    
+    function sumFunc(min, max) {
+      let sum = 0;
+      for (let i = min; i <= max; i++){
+        sum += i;
+      }
+      return sum;
+    }
+    console.log(`${min}부터 ${max}까지의 합은 : ${sumFunc(min, max)}`);
+
+    // 이름, 국어, 영어, 수학 데이터를 넘겨 받아 성적을 처리하는 함수
+    let name = prompt("이름을 입력하세요");
+    let korean = Number(prompt("국어 성적을 입력하세요"));
+    let english = Number(prompt("영어 성적을 입력하세요"));
+    let math = Number(prompt("수학 성적을 입력하세요"));
+    let layout = `이름 \t 총점 \t 평균 \t 등급 \n`;
+    let tableLayout = `<table><thead><tr><td>이름</td><td>총점</td><td>평균</td><td>등급</td></tr></thead>`;
+    function sungjuk(name, korean, english, math) {
+      let sum = (korean + english + math);
+      let avg = Math.round(sum/3);
+      let grade;
+      switch(Math.floor(avg/10)) {
+        case 10:
+        case 9: grade = "A";
+        break;
+        case 8: grade = "B";
+        break;
+        case 7: grade = "C";
+        break;
+        case 6: grade = "D";
+        break;
+        case 5: grade = "E";
+        break;
+        default : grade = "F";
+      }
+      layout += `${name} \t ${sum} \t ${avg} \t ${grade} \n`;
+      tableLayout += `<tr><td>${name}</td><td>${sum}</td><td>${avg}</td><td>${grade}</td></tr>`;
+      // return console.log(layout);
+      return tableLayout;
+    }
+    sungjuk(name, korean, english, math);
+    name = prompt("이름을 입력하세요");
+    korean = Number(prompt("국어 성적을 입력하세요"));
+    english = Number(prompt("영어 성적을 입력하세요"));
+    math = Number(prompt("수학 성적을 입력하세요"));
+    sungjuk(name, korean, english, math);
+    name = prompt("이름을 입력하세요");
+    korean = Number(prompt("국어 성적을 입력하세요"));
+    english = Number(prompt("영어 성적을 입력하세요"));
+    math = Number(prompt("수학 성적을 입력하세요"));
+    // sungjuk(name, korean, english, math);
+    let setTable = sungjuk(name, korean, english, math);
+    document.write(`${setTable}</table>`)
+    
+  </script>
+</body>
+</html>

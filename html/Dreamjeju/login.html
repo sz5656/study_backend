@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/mainstyle.css">
+  <style>
+    form {
+      width: 400px;
+      margin: 0 auto;
+    }
+    .floatField {
+      overflow: hidden;
+      legend {
+        margin-left: 3vh;
+      }
+      ul {
+        text-align: center;
+      }
+      ul li{
+        list-style: none;
+      }
+      label {
+        text-align: right;
+        float: left;
+        width: 10vh;
+      }
+      
+    }
+    #butPossion {
+      margin-top: 2px;
+      margin-bottom: 2px;
+      text-align: right;
+    }
+    button {
+      width: 5vh;
+      height: 4vh;
+      font-size: 1vh;
+      background-color: #ccc;
+      opacity: 0.7;
+      border-radius: 2vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1><a href="index.html">Dream Jeju</a></h1>
+      <nav>
+        <ul>
+          <li><a href="togethertrip.html">단체 여행</a></li>
+          <li><a href="customtrip.html">맞춤 여행</a></li>
+          <li><a href="galary.html">갤러리</a></li>
+          <li><a href="inquery.html">문의하기</a></li>
+        </ul>
+      </nav>
+    </header>
+    <article>
+      <section>
+        <form action="checkLogin.jsp">
+          <fieldset class="floatField">
+            <legend>Login</legend>
+            <ul>
+              <li>
+                <label for="user_Id">아이디</label>
+                <input type="text" name="user_Id" id="user_Id" required autofocus>
+              </li>
+              <li>
+                <label for="user_Pass">비밀번호</label>
+                <input type="password" name="user_Pass" id="user_Pass" required>
+              </li>
+            </ul>
+          </fieldset>
+          <div id="butPossion">
+            <button type="submit">로그인</button>
+            <button type="reset">취소</button>
+          </div>
+        </form>
+      </section>
+      <section>
+
+      </section>
+    </article>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">회사 소개</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">여행약관</a></li>
+          <li><a href="#">사이트맵</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

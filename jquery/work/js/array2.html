@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array2.html</title>
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('#btnAdd').addEventListener('click',function() {
+        let flag = true;
+        // document.querySelectorAll('input').forEach((ele) => {
+        //   if(ele.value == '') {
+        //     flag = false;
+        //   } 
+        // })
+        array = Array.from(document.querySelectorAll('input'))
+        flag = array.every((ele) => ele.value!= '')
+        if(!flag){
+          alert('값을 입력하세요');
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <h3>every, some, forEach / continue, break</h3>
+  <input name="userid">
+  <input name="username">
+  <input name="userpw">
+  <input name="userhobby">
+  <button type="button" id="btnAdd">등록</button>
+</body>
+</html>

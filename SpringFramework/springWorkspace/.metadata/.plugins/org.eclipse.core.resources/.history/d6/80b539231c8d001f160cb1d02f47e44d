@@ -1,0 +1,17 @@
+package com.yedam.app.di;
+
+public class Restaurant {
+	
+	private Chef chef;
+	
+	public Restaurant(Chef chef) {
+		this.chef = chef;
+	}
+	public void setChef(Chef chef) {
+		this.chef = chef;
+	}
+	
+	public void run() {
+		chef.cooking();
+	}
+}

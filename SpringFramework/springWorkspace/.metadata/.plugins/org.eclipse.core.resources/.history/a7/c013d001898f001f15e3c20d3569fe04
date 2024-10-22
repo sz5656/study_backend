@@ -1,0 +1,17 @@
+package com.yedam.app.dept.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.yedam.app.dept.service.DeptService;
+import com.yedam.app.dept.service.DeptVO;
+
+@Service // Bean 등록, 비즈니스 로직 담당 => AOP 적용
+public class DeptServiceImpl implements DeptService{
+	@Override
+	public List<DeptVO> getDeptList() {
+		return null;
+	}
+
+}

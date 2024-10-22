@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>numberAdd.html</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script>
+    // function calc() {
+    //   const num1 = document.querySelector('#num1').value;
+    //   const num2 = document.querySelector('#num2').value;
+    //   const result = parseInt(num1) + parseInt(num2);
+    //   const resultBtn = document.querySelector('#result');
+    //   resultBtn.innerHTML = result;
+    // }
+    //$(window).ready(function() {
+    $(function() {
+      let cnt = 0;
+      $('button').on("click",function() {
+        //유효성 체크 
+        let num1 = $('#num1').val(); //.value
+        let num2 = $('#num2').val()
+        let total = Number(num1)+Number(num2);
+        //카운터 값과 결과를 누적해서 출력<h3> or <br>
+        // console.log(Number.isInteger(total));
+        // alert(Number.isInteger(total));
+        $('#result').html(total); //.innerHTML
+        //result.insertAdjacentHTML('beforeend',`<h3>합 : ${total}, 카운터 : ${cnt++}</h3>`)
+      })
+    }) 
+  </script>
+</head>
+<body>
+  <h1>계산기</h1>
+  <input type="text" id="num1">
+  <input type="text" id="num2">
+  <button type="button"">계산</button>
+  <div id="result" style="border: 1px solid blue;"></div>
+  
+</body>
+</html>

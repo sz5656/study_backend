@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+D:\document\SpringFramework\springWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\197529360.index
+\Spring_Legacy_MVC_Project\src\main\java
+C:\Users\admin\Documents\springWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\862591626.index
+\spring01\src\main\java
+C:\Users\admin\Documents\springWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\197529360.index
+\Spring_Legacy_MVC_Project\src\main\java

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+
+			// tr 태그를 클릭하면 해당 행의 두번째 td이 있는 파일을 ajax로 로드하여 파싱한 후 텍스트 필드에 출력
+			document.addEventListener('DOMContentLoaded', function() {
+                //직접이벤트
+                // let users = document.querySelectorAll('tbody tr td:nth-child(2)');
+                // users.forEach(user => {
+                //     user.addEventListener('click', viewUserInfo)
+                // });
+                function viewUserInfo(e) {
+                    let element = event.target;
+                    let url = element.innerHTML;
+                    fetch(url)
+                    .then(result => result.json())
+                    .then(result => {
+                        document.querySelector('#no').value = element.previousElementSibling.innerText;
+                        document.querySelector('#id').value = result.id;
+                        document.querySelector('#email').value = result.email
+                        document.querySelector('#age').value = result.age
+                        document.querySelector('#gender').value = result.gender
+                    })
+                }
+                //-------------------------그룹이벤트----------------------
+                document.querySelector('tbody').addEventListener('click',function() {
+                    if(event.target.classList.contains('jsonName')) {
+                        viewUserInfo()
+                    }
+                })
+            })
+			
+        	
+ 
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>no</th>
+                            <th>이름</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="jsonName">hong.json</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="jsonName">choi.json</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="jsonName">park.json</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <form>
+                    <div class="mb-3">
+                        <label for="no" class="form-label">no</label>
+                        <input type="text" class="form-control" id="no" name="no">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id" class="form-label">id</label>
+                        <input type="text" class="form-control" id="id" name="id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">email</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">age</label>
+                        <input type="text" class="form-control" id="age" name="age">
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">gender</label>
+                        <input type="text" class="form-control" id="gender" name="gender">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

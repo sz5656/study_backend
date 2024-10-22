@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eventDelegate.html</title>
+</head>
+<body>
+  <input id="txtWord"><button id="btnAdd" type="button">버튼</button>
+  <p class="word">list</p>
+  <p class="word">nice</p>
+  <p class="word">good</p>
+  <p class="word">very</p>
+  <p class="word">바나나</p>
+  <script>
+    //버튼클릭 이벤트 : 인풋태그의 입력값으로 p태그
+    //만들어서 바디에 추가
+    //value, insertAdjacentElementHTML()
+    const btnAdd = document.querySelector('#btnAdd');
+    btnAdd.addEventListener("click", function() {
+      // const abc = document.querySelector('#txtWord').value;
+      // txtWord.parentElement.insertAdjacentElementHTML('beforeend',`<p class="word">${abc}</p>`);
+      let txt = document.querySelector('#txtWord');
+      let newTag = `<p class="word">${txt.value}</p>`;
+      document.body.insertAdjacentHTML('beforeend',newTag);
+      txt.value="";
+    })
+    //.word 태그에 마우스오버 이벤트 -> 배경색 변경
+    //태그.style.속성 = 'xxx';
+    //직접이벤트
+    // const classWord = document.querySelectorAll('.word');
+    // for (const element of classWord) {
+    //   element.addEventListener("mouseenter", function() {
+    //     element.style.backgroundColor = 'red';
+    //   })
+    //   element.addEventListener("mouseleave", function() {
+    //     element.style.backgroundColor = 'white';
+    //   })
+    // }
+
+    //그룹(=위임)이벤트 : 부모태그에 이벤트 지정(이벤트 전파 속성을 이용)
+    document.body.addEventListener("mouseover",function() {
+      if(event.target.tagName == 'P'){ // event.target.classList.contains('word')
+        event.target.style.backgroundColor = 'yellowgreen';
+      }
+    })
+
+  </script>
+</body>
+</html>

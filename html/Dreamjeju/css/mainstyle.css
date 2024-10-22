@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+    *{
+      box-sizing: border-box;
+    }
+    #container {
+      width: 90%;
+      margin: 0 auto;
+    }
+    header {
+      overflow: hidden;
+      background-color: black;
+      height: 60px;
+    }
+    header h1 {
+      margin: 0;
+      margin-left: 20px;
+      font-family: "Cute Font", sans-serif;
+      font-size: 50px;
+      float: left;
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    }
+    nav {
+      line-height: 40px;
+      ul {
+        list-style-type: none;
+        text-align: center;
+        li {
+          display: inline-block;
+          a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 20px;
+            padding-right: 40px;
+          }
+        }
+      }
+    }
+    article {
+      border: 1px solid #ccc;
+      border-bottom: 2.5px solid black;
+      section {
+        margin: 20px auto; 
+      }
+    }
+    footer {
+      clear: both;
+      border: 1px solid #ccc;
+      height: 50px;
+      nav {
+        list-style-type: none;
+        height: 20px;
+        ul {
+          margin-top: 5px;
+          text-align: left;
+          li {
+            display: inline-block;
+            a {
+              text-align: center;
+              padding: 5px;
+              padding-left: 10px;
+              padding-right: 10px;
+              color: #ccc;
+              text-decoration: none;
+            }
+            border-right: 1px dotted #ccc;
+          }
+        }
+      }
+    }
+    footer nav ul li:last-child {
+      border-right: none;
+    }

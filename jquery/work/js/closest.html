@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>closest.html</title>
+</head>
+<body>
+  <table>
+    <tr data-goodsid="g1">
+      <td>1</td>
+      <td>2</td>
+      <td id="tdTag"><button type="button" class="btnAdd">추가</button></td>
+    </tr>
+    <tr data-goodsid="g2">
+      <td>4</td>
+      <td>5</td>
+      <td><button type="button" class="btnAdd">추가</button></td>
+    </tr>
+    <tr data-goodsid="g3">
+      <td>7</td>
+      <td>8</td>
+      <td><button type="button" class="btnAdd">추가</button></td>
+    </tr>
+  </table>
+  <script>
+    //document.querySelector('.btnAdd').closest('tr').firstElementChild.innerText
+    //버튼 클릭 -> tr의 data 속성 읽기
+    //   document.querySelector('.btnAdd').addEventListener("click",function() {
+    //   console.log(document.querySelector('.btnAdd').closest('tr').dataset.goodsid);
+    // })
+    const addBtns = document.querySelectorAll('.btnAdd');
+    // array.forEach(addBtns => {
+    //   addBtn.addEventListener("click",function() {
+    //     console.log(document.querySelector('.btnAdd').closest('tr').dataset.goodsid);
+    //   })
+    // });
+    // for (btn of addBtns) {
+    //   btn.addEventListener("click",function(e) {
+    //     let goodsid = e.target.closest('tr').dataset.goodsid;
+    //     console.log(goodsid+"-function(e)");
+    //   })
+    // }
+    // for (btn of addBtns) {
+    //   btn.addEventListener("click",e=> {
+    //     let goodsid = window.event.target.closest('tr').dataset.goodsid;
+    //     console.log(goodsid+"-익명함수");
+    //     //dataset || getAttribute
+    //     //e.target || window.event.target
+    //     //this - 익명함수x
+    //   })
+    // }
+
+    //그룹이벤트
+    document.querySelector('table').addEventListener("click",function() {
+      if(event.target.classList.contains('btnAdd')) {
+        let goodsid = event.target.closest('tr').dataset.goodsid;
+        console.log(goodsid+"-function(e)");
+      }
+    })
+
+    // document.body.childNodes[1].addEventListener("click",function() {
+    //   if(event.target.classList.contains('btnAdd')) {
+    //     let goodsid = event.target.closest('tr').dataset.goodsid;
+    //     console.log(goodsid+"-function(e)");
+    //   }
+    // })
+  </script>
+</body>
+</html>

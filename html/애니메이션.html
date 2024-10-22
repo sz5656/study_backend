@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <style>
+    #container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    #myball {
+      width: 200px; height: 200px;
+      background: url(img/dog/포메.webp) no-repeat;
+      background-size: cover; /* 백그라운드 안에 꽉 차게 설정 */
+      /* background-color: aqua; */
+      border-radius: 0%;
+      border: 5px solid red;
+      animation: myAni;
+      /* animation-duration: 4s;
+      animation-direction: alternate;
+      animation-delay: 1s;
+      animation-iteration-count: infinite; */
+      /* animation-timing-function: linear; */
+      /* position: relative; */
+      /* 애니메이션 적용할 때 공간 필요 */
+    }
+    #bear {
+      width: 200px; height: 200px;
+      box-shadow: 1px 1px 5px 4px #222;
+      border-radius: 50%;
+      border: 2px solid white;
+      background: url(img/dog/폭스테리어.jpg) no-repeat;
+      background-size: cover;
+      animation: myAni2;
+      position: relative;
+      perspective: 200px;
+      animation-duration: 4s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+    }
+    @keyframes myAni{
+      0%{
+        left: 0;
+        top: 0;
+      }
+      10%{
+        left: 100px;
+      }
+      20%{
+        top: 200px;
+        perspective: 200px;
+        /* transform: rotateY('180deg'); */
+      }
+      40%{
+        left: 300px;
+        background: url(img/dog/골댕이.jpg);
+      }
+      80%{
+        left: 400px;
+        top: 300px;
+        background: url(img/dog/말티즈.webp);
+      }
+      100%{
+        left: 400px;
+        top: 400px;
+        border-radius: 50%;
+        transform: rotate(360deg);
+        background: url(img/dog/포메.webp);
+        border: 5px dotted yellow;
+      }
+    }
+    @keyframes myAni2{
+      0%{
+        top: 200px; left: 200px;
+        transform: rotateY(30deg);
+        transform: translateZ(200px) perspective(200px);
+      }
+      50%{
+        top: 400px; left: 400px;
+        /* transform: rotateY(270deg); */
+        transform: rotateY(90deg);
+        width: 250px; height: 250px;
+        transform: rotateZ(180deg);
+        opacity: 0.5;
+      }
+      100%{
+        top: 300px; left: 300px;
+        transform: rotateY(180deg);
+        transform: rotateZ(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="myball"></div>
+    <div id="bear"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>asysc.html</title>
+</head>
+<body>
+  <h3>동기, 비동기 테스트</h3>
+  <form action="" name="frm">
+    <input name="userid" value="park">
+    <input name="username" value="scott">
+    <input type="file" name="profile">
+  </form>
+  <button type="button" onclick="callAjax()">요청</button>
+  <button type="button" onclick="getAjax()">get요청</button>
+  <button type="button" onclick="postAjax()">post요청</button>
+  <button type="button" onclick="jsonAjax()">json요청</button>
+  <script>
+    let url = 'http://localhost/restServer/MethodServlet'
+    function getAjax() {
+      fetch(url+"?userid=choi")
+      .then(result => result.text()) // string, json string, xml
+      .then(result => console.log(result))
+    }
+    function postAjax() {
+      const formData = new FormData(document.frm);
+      formData.append("postid","scoot king");
+      fetch(url,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body : formData
+      })
+      .then(result => result.text()) // string, json string, xml
+      .then(result => console.log(result))
+    }
+    function jsonAjax() {
+      let url = 'http://localhost/restServer/JsonServlet'
+      let data = {userid:"json user", username:"scott"};
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body : JSON.stringify(data)
+      })
+      .then(result => result.text())
+      .then(result => console.log(result));
+    }
+    async function callAjax() {
+      let result = await fetch('http://localhost/restServer/RestServlet');
+      result = await result.text();
+      console.log("response",result);
+      
+      console.log("the end");
+    }
+
+  </script>
+</body>
+</html>

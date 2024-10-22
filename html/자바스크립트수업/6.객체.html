@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체</title>
+</head>
+<body>
+  <h1>객체</h1>
+  <script>
+    let stu = {
+      name : "홍",
+      kor : 98,
+      eng : 88,
+      arr : [1,2,3,4,5],
+      work : function(subject) {
+        console.log(`${subject}ovenkyosimasu`);
+      }
+    }
+    console.log(stu);
+    console.log(stu.name);
+    let stu2 = stu; // 참조복사
+    console.log(stu2.name);
+    stu2.name = "kang";
+    console.log(stu2.name);
+    console.log(stu.arr[2]);
+    console.log(stu.work('javascript'));
+
+    // 객체의 처음부터 끝까지 키를 가져오는 반복문 for - in
+    // for( 변수 in 객체 )
+    for(let key in stu) {
+      console.log(`객체의 키 : ${key} : 값 : ${stu[key]}`);
+    }
+
+    // key가 객체안에 존재하는지 확인
+    // key in 객체 -> 있으면 true 없으면 false
+    console.log('name' in stu);
+    console.log('age' in stu);
+
+    // 객체의 값 추가, 삭제
+    stu.art = 99; // 키가 있으면 값이 변경됨
+    stu.kor = 100;
+    delete (stu.art);
+    stu.play = function(space) {
+      console.log(`${space} 갑니다아`);
+    }
+    console.log(stu);
+    console.log(stu.play(`pc방`));
+
+    // 생성자 함수명 : Product
+    function Product(name, weight, price) {
+      this.name = name,
+      this.weight = weight,
+      this.price = price
+    }
+    // 메소드 calculate
+    Product.prototype.clac = function(w) {
+      return w / this.weight * this.price;
+    }
+
+    let sam = new Product('삼겹살',100,1000);
+    console.log(sam);
+    console.log(sam.name);
+    console.log(sam.clac(5000));
+
+    let sogo = new Product('소고기',100,5000);
+    console.log(`${sogo.name} ${sogo.weight}g : ${sogo.price}원 => ${sogo.clac(1200)}`);
+  </script>
+</body>
+</html>

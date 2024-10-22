@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>레드향</title>
+    <style>
+      #container {
+        width: 600px;
+        border: none;
+        margin: 0 auto; /* 중앙정렬 */
+      }
+      #redHeader {
+        border: 1px solid black;
+        border-top-right-radius: 20px;
+        border-top-left-radius:  20px;
+        padding: 20px;
+        margin: 10px;
+        /* #redImg{
+          float: left;
+        } */
+      }
+      #redRecipe {
+        border: 1px solid black;
+        padding: 20px;
+        margin: 10px;
+        overflow: hidden;
+        /* float 로 속성이 적용된 자식영역을 포함할수 있도록 함*/
+        #saladImg {
+          float: right;
+          /* padding-top: 10px; */
+          margin-left: 10px;
+          width: 200px;
+        }
+      }
+      #redProduct {
+        border: 1px solid black;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 20px;
+        margin: 10px;
+      }
+      #redTable {
+        margin: 0 auto;
+        width: 90%;
+        border: 1px solid black;
+        border-collapse: collapse;
+        thead {
+          background-color: bisque;
+        }
+        th, td {
+          padding: 10px;
+          margin: 10px 0;
+          /* padding-left: 30px; */
+          border: 1px solid black;
+        }
+        .rowBoldCenter {
+          text-align: center;
+        }
+        .tableColor {
+          background-color: #ccc;
+        }
+        p {
+          text-align: center;
+        }
+        th {
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="redHeader">
+        <img src="img/레드향.jpg" alt="레드향" width="50%" id="redImg">
+        <h1>레드향</h1>
+        <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+        <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>
+           일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.
+        </p>
+        <p><i>비타민 C</i>와 <i>비타민 P</i>가 풍부해<br>
+           <strong>혈액 순환, 감기예방</strong> 등에 좋은 것으로 알려져 있다.
+        </p>
+      </div>
+      <div id="redRecipe">
+        <h2>레드향 샐러드 레시피</h2>
+        <p><b>재료</b> : 레드향 1개, 아보카도 1개, 토마토 1개, 샐러드 채소 30g</p>
+        <p><b>드레싱</b> : 올리브유 1큰술, 레몬즙 2큰술, 꿀 1큰술, 소금 약간</p>
+        <img src="img/샐러드.jpg" alt="샐러드" width="40%" id="saladImg">
+        <ol>
+          <li>샐러드 채소를 씻어 물기를 제거한 후 먹기 좋게 썰어서 준비합니다.</li>
+          <li>레드향과 아보카도, 토마토도 먹기 좋은 크기로 썰어 둡니다.</li>
+          <li>드레싱 재료를 믹서에 한꺼번에 넣고 갈아줍니다.</li>
+          <li>볼에 샐러드 채소와 레드향, 아보카도, 토마토를 넣고 드레싱을 뿌리면 끝!</li>
+        </ol>
+        <!-- 샐러드동영상삽입 -->
+        <iframe width="550px" height="400" 
+        src="https://www.youtube.com/embed/b0VqL4-dSPM?si=M9JgS6AP8RXj3ecY" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
+      </div>
+      <div id="redProduct">
+        <h2>상품 구성</h2>
+        <table id="redTable">
+          <caption><p>선물용과 가정용 상품 구성</p></caption>
+          <colgroup>
+            <col class="tableColor">
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th>용도</th>
+              <th>중량</th>
+              <th>개수</th>
+              <th>가격</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2" class="rowBoldCenter">선물용</td>
+              <td>3kg</td>
+              <td>11~16과</td>
+              <td>35,000원</td>
+            </tr>
+            <tr>
+              <td>5kg</td>
+              <td>18~26과</td>
+              <td>52,000원</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="rowBoldCenter">가정용</td>
+              <td>3kg</td>
+              <td>11~16과</td>
+              <td>30,000원</td>
+            </tr>
+            <tr>
+              <td>5kg</td>
+              <td>18~26과</td>
+              <td>52,000원</td>
+            </tr>
+          </tbody>
+        </table>
+        <dl>
+          <dt>선물용 3kg</dt>
+          <dd>소과 13~16과</dd>
+          <dd>중과 10~12과</dd>
+        </dl>
+        <dl>
+          <dt>선물용 5kg</dt>
+          <dd>중과 15~19과</dd>
+        </dl>
+      </div>
+    </div>
+  </body>
+</html>

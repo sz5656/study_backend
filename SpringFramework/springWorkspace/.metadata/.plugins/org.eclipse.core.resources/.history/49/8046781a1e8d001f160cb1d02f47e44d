@@ -1,0 +1,7 @@
+package com.yedam.app.di;
+
+public class Chef {
+	public void cooking() {
+		System.out.println("셰프가 요리중입니다.");
+	}
+}

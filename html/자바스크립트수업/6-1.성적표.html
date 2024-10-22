@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>성적표</title>
+  <link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+  <h1>성적표</h1>
+  <script>
+    // 이름, kor, eng, art, sports 성적입력 => 학생 객체 생성 함수
+    // 총점, 평균 계산하는 메소드
+    // 이름 총점 평균 출력
+    // 생성자 함수
+    function Student(name, kor, eng, art, sports) {
+      this.name = name,
+      this.kor = kor,
+      this.eng = eng,
+      this.art = art,
+      this.sports = sports;
+    }
+    Student.prototype.tot = function() {
+      return this.kor + this.eng + this.art + this.sports;
+    }
+    Student.prototype.avg = function() {
+      return this.tot()/4;
+    }
+    Student.prototype.grade = function() {
+      let grade;
+      switch(Math.floor(this.avg()/10)) {
+        case 10:
+        case 9: grade = "A";
+          break;
+        case 8: grade = "B";
+          break;
+        case 7: grade = "C";
+          break;
+        case 6: grade = "D";
+          break;
+        default : grade = "F";
+      }
+      return grade;
+    }
+    Student.prototype.rank = function () {
+      let rank = 1; // 등수 초기화
+      for(let j = 0; j < students.length; j++) {
+        if(this.avg() == students[j].avg()) rank += 0;
+        else if(this.avg() < students[j].avg()) {
+          rank++;
+        }
+      }
+      return rank;
+    }
+
+    Student.prototype.output = function() {
+      console.log(`${this.name} \t ${this.tot()} \t ${this.avg()}`);
+    }
+    
+    // 학생 객체를 저장할 배열 생성
+    let students = [
+      new Student('hong',40,50,60,70),
+      new Student('kang',50,60,70,80),
+      new Student('hwang',60,70,80,90),
+      new Student('park',50,20,30,40),
+      new Student('kim',10,20,30,70),
+      new Student('kum',10,20,30,50)
+    ];
+    console.log(students);
+    // 성적표 출력
+    console.log(`=====================`);
+    console.log(`이름 \t 총점 \t 평균`);
+    console.log(`=====================`);
+    for(let i = 0; i < students.length; i++) {
+      students[i].output();
+    }
+
+    function Game(name, year, type, price) {
+      this.name =name,
+      this.year = year,
+      this.type = type,
+      this.price = price
+    }
+    // 웹페이지 표로 작성
+    // 등급 석차
+    function creatTable(students) {
+      let layout = `<h1>Table</h1><table id = "stuTable${students.length}">
+        <thead><tr><td>이름</td><td>총점</td><td>평균</td><td>등급</td><td>석차</td></tr></thead>`;
+      for(let i = 0; i < students.length; i++) {
+        let name = students[i].name;
+        let tot = students[i].tot();
+        let avg = students[i].avg();
+        let grade = students[i].grade();
+        let rank = students[i].rank();
+        layout += `<tr><td>${students[i].name}</td><td>${students[i].tot()}</td><td>${students[i].avg()}</td>
+          <td>${students[i].grade()}</td><td>${students[i].rank()}</td></tr>`;
+      }
+      layout += `</table>`;
+      return document.write(layout);
+    }
+    creatTable(students); // table 만들기 완료
+
+    // 학생 추가하기
+    function addStudents(name, kor, eng, art, sports) {
+      this.name = name;
+      this.kor = kor;
+      this.eng = eng;
+      this.art = art;
+      this.sports = sports;
+      students[students.length] = new Student(name, kor, eng, art, sports);
+      creatTable(students);
+      return students;
+    }
+    // addStudents('aaa',70,20,90,70);
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어쿼리</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+    body {
+      background-color: aqua;
+    }
+    #container {
+      width: 320px;
+      margin: 50px auto;
+    }
+    .card {
+      width: 300px; height: 500px;
+      background-color: white;
+      border: 1px solid #ccc;
+      position: relative;
+      margin-bottom: 5px;
+    }
+    img {
+      width: 300px; height: 250px;
+    }
+    .wordBox {
+      border: 1px solid black;
+      text-align: center;
+      position: absolute;
+      width: 300px;
+      top: 300px;
+    }
+    @media screen and (min-width: 768px){
+      #container {
+        width: 570px;
+        margin: 0 auto;
+      }
+      .card {
+        width: 550px; height: 250px;
+      }
+      .wordBox{
+        left: 300px;
+        top: 80px; width: 250px;
+      }
+    }
+    @media screen and (min-width: 1710px){
+      #container {
+        width: 1710px;
+        margin: 0 auto;
+      }
+      .card {
+        float: left;
+      }
+      .wordBox {
+        background-color: yellow;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="card">
+      <img src="img/mic.jpg" alt="마이크">
+      <div class="wordBox">
+        <h3>가나다라마바사</h3>
+        <p>아자차카타파하
+          abcdefghijklmnopqrstuvwxyz
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/mic.jpg" alt="마이크">
+      <div class="wordBox">
+        <h3>가나다라마바사</h3>
+        <p>아자차카타파하
+          abcdefghijklmnopqrstuvwxyz
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/mic.jpg" alt="마이크">
+      <div class="wordBox">
+        <h3>가나다라마바사</h3>
+        <p>아자차카타파하
+          abcdefghijklmnopqrstuvwxyz
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/mic.jpg" alt="마이크">
+      <div class="wordBox">
+        <h3>가나다라마바사</h3>
+        <p>아자차카타파하
+          abcdefghijklmnopqrstuvwxyz
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/mic.jpg" alt="마이크">
+      <div class="wordBox">
+        <h3>가나다라마바사</h3>
+        <p>아자차카타파하
+          abcdefghijklmnopqrstuvwxyz
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>참조데이터유형</title>
+</head>
+<body>
+  <h1>참조 데이터 유형</h1>
+  <script>
+    //참조데이터 유형 : 변수에 데이터가 저장된 주소가 저장됨
+    //배열 : 하나의 변수에 여러개의 데이터 저장(HIP영역)
+    let seasons = ["봄","여름","가을","겨울"];
+    console.log(seasons);
+    console.log(seasons[1]);
+
+    //객체 : 하나의 변수에 키:값 형식의 데이터를 저장
+    //객체 = 속성 + 동작
+    let person = {
+      name : "noName", // 속성
+      age : "unknown", // 속성
+      eat : function(food) {
+        console.log(food + " 먹어요");
+      }, // 메소드
+      run : function() {
+        console.log(this.name + " 달린다");
+      }
+    };
+    console.log(person);
+    console.log(person.eat("coffee"));
+    console.log(person.run());
+    console.log(person.run);
+
+    // 자료형 변환
+    // 숫자와 문자의 연산
+    console.log(5 + "10"); //숫자가 문자로 변환 -> (+ : 연결연산자)
+    console.log(5 - "10");
+    console.log(5 * "10");
+    console.log(5 / "10"); //나머지 - * / 는 문자가 숫자로 변환
+
+    // 강제 타입 변환 : 숫자:Number() / 문자:String()
+    // 문자가 숫자로 변환될 수 없으면 NaN(Not a Number)
+    // Number(null), Number(''), Number(' ') => 0
+    console.log(5 + Number("10"));
+    console.log(5 + String(77));
+    console.log(5 - Number("십"));
+    console.log(5 - String(null));
+    console.log(5 - Number(null));
+
+    //사용자로부터 나이를 입력 받아서 10년 후의 나이를 출력
+    let age;
+    age = prompt("사용자의 나이를 입력하세요");
+    document.write(`<strong>10년 후의 나이는 현재나이:${age}+10 = </strong>`+ (Number(age)+10) + "세 입니다.")
+
+    //==, === 차이
+    console.log(5 == "5"); // 형변환 비교
+    console.log(5 === "5"); // 자료형도 비교
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>텍스트 태그</title>
+    <style>
+      thead{
+        background-color: beige;
+      }
+      tfoot{
+        background-color: black;
+        color: red;
+      }
+      #tableGift { /* table Gift 설정 */
+        /* caption-side: bottom; */
+        /* 표 제목 이동 caption-side */
+        width: 80%; /* 보이는 화면 크기 기준으로 크기조정할 때 %사용 */
+        border: 2px solid #000; /* 표 테두리 설정 */
+        border-spacing: 10px 30px; /* 셀 사이 여백 설정 */
+        empty-cells: hide;
+        /* 비어있는 셀 테두리 삭제 */
+        border-collapse: collapse;
+        /* 표 테두리 합체(collapse) / 합체하면 표 사이 공간(spacing) 사라짐 */
+        th, td {
+          border: 1px solid #ccc;
+          text-align: center;
+          padding: 10px;
+        }
+      }
+      h1 {
+        width: 300px;
+        height: 300px;
+        background-color: beige;
+        text-align: center;
+        line-height: 300px;
+        box-shadow: 3px 3px 25px 3px #000 inset;
+        border: 2px solid red;
+        /* border-(top/left/right/bottom) - 테두리 설정*/
+        /* border-radius: 50%; */
+        /* 모서리 둥글게 / tip : 50% -> 원으로 만들 수 있음*/
+        border-top-left-radius: 12%;
+        border-bottom-right-radius: 15%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="top">문서제목</h1>
+    <ul>
+      <li><a href="#list">목록만들기</a></li>
+      <li><a href="#table">표만들기</a></li>
+      <li><a href="#image">이미지 넣기</a></li>
+    </ul>
+    <h2>x<sup>2</sup> + y<sup>2</sup>, H<sub>2</sub>O</h2>
+    <h3>작은제목</h3>
+    <p><s>문단작성</s></p>
+    <abbr title="Internet of Things">IoT</abbr>
+    <p><strong><mark>lorem ipsum</mark></strong> dolor sit amet
+       <b>consectetur adipisicing</b> elit.<br>
+       Corrupti quaerat, cum obcaecati aperiam necessitatibus
+       modi,<br> harum repudiandae iure commodi dolorem consequatur 
+       <blockquote cite="https://www.naver.com">
+       <em><q><span style="color: blue;">Lorem</span> <small>ipsum</small></q></em> dolor sit amet consectetur adipisicing elit. Molestiae, dolor!</blockquote>
+       <i>quibusdam aliquam magni</i> rem maxime officiis! Ullam,
+       a laboriosam!</p>
+       <pre>웹브라우저가 해석하지 않아요
+        입력한 그대로 표 시 해 요
+       </pre>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         <div style="color: red;">영역 구별--Iste saepe alias odio ipsam totam, adipisci praesentium--끝</div>
+          laborum.
+          Placeat, quo iste.</p>
+    <hr>
+    <h3 id="list">목록 만들기</h3>
+    <h4>순서없는 목록</h4>
+    <ul>
+      <li>바나나</li>
+      <li>딸기</li>
+      <li>복숭아</li>
+    </ul>
+    <h4>순서있는 목록</h4>
+    <ol start="1" type="I">
+      <li>냉장고 사기</li>
+      <li>코끼리 분양받기</li>
+      <li>냉장고 문열기</li>
+      <li>코끼리 집어넣기</li>
+      <li>냉장고 문닫기</li>
+    </ol>
+    <h4>설명 목록</h4>
+    <dl>
+      <dt>바나나</dt>
+      <dd>노란색 길쭉한 열대 과일</dd>
+      <dt>사과</dt>
+      <dd>빨간색 동그란 과일</dd>
+    </dl>
+    <p><a href="#top">처음으로</a></p>
+    <h4 id="table">표만들기</h4>
+    <table id="tableGift">
+      <caption>선물용과 가정용 상품 구성</caption>
+      <colgroup>
+        <col span="2" style="background-color: azure;">
+        <col style="width: 150px;">
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">선물용</td>
+          <td>3Kg</td>
+          <td></td>
+          <td>35,000원</td>
+        </tr>
+        <tr>
+          <td>5Kg</td>
+          <td>18~26과</td>
+          <td>52,000원</td>
+        </tr>
+        <tr>
+          <td rowspan="2">가정용</td>
+          <td>3Kg</td>
+          <td>11~16과</td>
+          <td>30,000원</td>
+        </tr>
+        <tr>
+          <td>5Kg</td>
+          <td>18~26과</td>
+          <td>47,000원</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">* 제품 구매 시기에 따라 가격이 변동될 수 있습니다.</td>
+        </tr>
+      </tfoot>
+    </table>
+    <table border="1">
+      <caption>
+        요안도라 객실
+      </caption>
+      <thead style="background-color: blueviolet;">
+        <tr>
+          <th style="width: 120px;">방 이름</th>
+          <th style="width: 120px;">대상</th>
+          <th style="width: 120px;">크기</th>
+          <th style="width: 120px;">가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>유채방</td>
+          <td>여성 도미토리</td>
+          <td rowspan="3">4인실</td>
+          <td rowspan="4">1인 20,000원</td>
+        </tr>
+        <tr>
+          <td rowspan="2">동백방</td>
+          <td>동성 도미토리</td>
+        </tr>
+        <tr>
+          <td>가족 1팀</td>
+        </tr>
+        <tr>
+          <td>천혜향방</td>
+          <td>-</td>
+          <td>2인실</td>
+        </tr>
+      </tbody>
+      <tfoot style="background-color: black; color: white;">
+        <tr>
+          <td colspan="4">바깥채 전체를 렌트합니다</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p><a href="#top">처음으로</a></p>
+    <h4 id="image">이미지 넣기</h4>
+    <a href="https://www.daum.net" target="_blank" title="다음으로 이동">
+    <img src="img/레드향.jpg" alt="레드향" 
+    width="40%" height="40%">
+    </a>
+    <p><a href="#top">처음으로</a></p>
+    <h4>동영상 넣기</h4>
+    <video src="html/media/사랑한다사랑해.mp4" controls preload="auto"
+    loop muted width="60%" style="margin-left: 20%; margin-right: 20%;"></video>
+    <audio src="html/media/미소속에비친그대.mp3" controls preload="auto"
+    loop muted autoplay></audio>
+
+    <h4>외부 파일 삽입</h4>
+    <object data="html/1일차 실습.pdf" width="500" height="500"></object>
+    <embed src="html/1일차 실습.pdf" width="500" height="500">
+
+    <h4>유튜브 영상 삽입</h4>
+    <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/52GV8838j0w?si=Ccm3B04zIMl0XBH5" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+    gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+    <br>
+    <h4>링크 삽입</h4>
+    <a href="https://www.naver.com" target="_blank" title="네이버로 이동">
+      네이버</a>
+    <br>
+    <a href="https://youtu.be/QPjfwubAvso?si=W9ztlCtjILoINRi4" 
+    target="_blank" title="백종원 레시피">백종원의 대용량 레시피</a>
+    <br>
+    <a href="index.html">첫페이지로 이동</a><br>
+    <a href="img/레드향.jpg" download>파일 다운로드</a>
+    <a href="https://youtu.be/QPjfwubAvso"></a>
+    </body>
+</html>

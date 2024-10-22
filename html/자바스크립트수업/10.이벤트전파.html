@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 전파</title>
+  <style>
+    .accent{
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="parent">부모요소
+    <p id="child">자식요소</p>
+  </h1>
+  <script>
+    //이벤트 전파
+    //요소 접근
+    let p = document.querySelector('#parent');
+    let c = document.querySelector('#child');
+
+    p.addEventListener('click',parentEvent,false); // (event, 함수, 캡쳐링유무)
+    // p.onclick = parentEvent;
+    c.addEventListener('click',childEvent,false);
+
+    // 부모 이벤트 핸들러(함수)
+    function parentEvent() {
+      alert('부모이벤트 발생');
+    }
+
+    // 자식 이벤트 핸들러(함수)
+    function childEvent() {
+      alert('자식이벤트 발생');
+      event.stopPropagation(); // 전파stop
+    }
+
+    // 요소 생성 -> 추가
+    // 요소 노드(Tag) 생성
+    // 텍스트 노드 생성 (내용)
+    // 속성 지정
+    // body에 추가 
+    let newP = document.createElement('p'); // <p></p>
+    let newText = document.createTextNode('주문완료'); //주문완료
+    newP.appendChild(newText); // <p>주문완료</p>
+    document.body.appendChild(newP);
+    // 속성 추가
+    newP.setAttribute('class','accent'); //(속성,이름)
+
+    /*
+    html body에서 요소 뽑아오는법
+    document.body.(요소-id,name ...)
+
+    [radio / check] button -> name의 값 뽑아오는법
+    radio -> document.querySelector("input[name='이름']:checked").value
+    checkbox -> document.querySelectorAll(동일); 여러개 선택되기때문에 ALL사용
+
+    select에서 가져오는법
+    document.login(상위영역).sel(name/id).options 옵션 가져오기(배열)
+    선택된 값 가져오기
+    document.login.sel.options[document.login.options.selectedIndex].value
+    document.login.sel.options[document.login.options.selectedIndex].innerText
+    */
+  </script>
+</body>
+</html>

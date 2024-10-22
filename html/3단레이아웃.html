@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>3단레이아웃</title>
+    <style>
+      #container {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+      }
+      header {
+        background-color: beige;
+      }
+      section {
+        background-color: #ccc;
+      }
+      aside {
+        background-color: azure;
+      }
+      footer {
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <section>
+        <header id="divHeader">
+          <h1>사이트 제목</h1>
+        </header>
+        <div id="leftSideBar">
+          <h2>왼쪽 사이드 바</h2>
+          <p>광고1</p>
+          <br>
+          <p>광고2</p>
+        </div>
+        <div id="mainText">
+          <h2>본문</h2>
+          <p>내용 입력1</p>
+          <br>
+          <p>내용 입력2</p>
+        </div>
+        <aside>
+          <div id="rightSideBar">
+            <h2>오른쪽 사이드 바</h2>
+            <p>광고1</p>
+            <br>
+            <p>광고2</p>
+          </div>
+        </aside>
+      </section>
+      <footer>
+        <h2>푸터</h2>
+        <p>저작권 정보, 연락처 등</p>
+      </footer>
+    </div>
+  </body>
+</html>

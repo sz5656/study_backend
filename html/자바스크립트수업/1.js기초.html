@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js기초</title>
+</head>
+<body>
+  <h1>js기초</h1>
+  <script>
+    var a;
+    a = "Hello js";
+    var intA, intB;
+    intA = a.length;
+    intB = 15;
+    //출력문
+    //알림창
+    alert(a);
+    //콘솔창
+    console.log(a);
+    //웹 문서(html 내부)
+    document.write(a + " " + a + "<br>");
+    document.write("<br> intA : "+intA);
+    document.write("<br> intB : "+intB);
+    document.write("<br> intA+intB : "+(intA+intB));
+    //입력문
+    var st1 = prompt("숫자를 입력하세요","15");
+    let age = prompt("나이를 입력하세요","25");
+    st1 = Number(st1);
+    document.write(`<br> intA+intB+입력받은 수:${st1} : ` + (intA + intB + st1));
+    // console.log(typeof intA); console.log(typeof intB); console.log(typeof st1);
+    //확인창
+    var check = confirm("진짜에요?")
+    console.log(check);
+    // 변수 선언
+    // 선언문 let -> 재선언x, 선언 전에 사용x, 스크립트 변수(this 사용x)
+    // 선언문 var -> 재선언o, 선언 전에 사용o(hoisting), 전역 변수(window => this 사용o) 
+    let letVal1 = 10;
+    //let letVal1 = 20; // 재선언 안됨, let선언문 사용 권장
+    let result = letVal1 + 10;
+    let result2 = varVal1 + 10;
+    console.log("let으로 선언" + result);
+    console.log("var로 선언" + result2);
+    var varVal1 = 10;
+    var varVal1 = 20; // 재선언 가능 - 여러명 작업시 문제 발생, 가능하면 사용하지않는것 추천
+    //상수 선언 : 변하지 않는 값을 저장할 변수 지정
+    // 재선언x, 재할당x(값 변경 불가), 반드시 선언할 때 초기화 되어야 함.
+    // 상수 변수명은 대문자로 작성
+    const PI = 3.1415926535;
+    //const PI = 3.14; 재선언 불가
+    //PI = 3.15; 재할당 불가 - 값을 변경할 수 없음
+    console.log(PI);
+    // 변수에 저장된 데이터 유형(type)을 알아내는 연산자
+    let letStr1 = "String Test";
+    console.log(`typeof(PI) = `+typeof(PI)); console.log(`typeof(letStr1) = `+typeof(letStr1));
+    // escape test -> '\' 뒤에 사용
+    console.log("안녕\n하세요\t나는\t \"홍길동\"입니다");
+    let su = null; //값이 없다, 있어도 의미 없다
+    let su2;
+    console.log(su);
+    console.log(su2);
+  </script>
+</body>
+</html>

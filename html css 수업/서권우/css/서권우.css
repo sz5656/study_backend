@@ -1,0 +1,144 @@
+/* 2-2, 2-3 */
+*{
+  box-sizing: border-box;
+  font-family: "맑은 고딕";
+}
+/* 2-4 */
+#container{ 
+  width: 1000px;
+  margin: 0 auto;
+}
+/*헤더영역*/
+header {
+  text-align: center;
+}
+/* 2-5 */
+nav {
+  overflow: hidden;
+  background-color: black;
+  ul{
+    list-style: none;
+    padding-left: 0px;
+    margin: 0;
+    li{
+      float: left;
+      a{
+        display: block;
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+#login {
+  float: right;
+}
+/* 2-6 */
+ul li a:hover {
+  color: black;
+  background-color: pink;
+}
+/*좌측 사이드영역*/
+.textBold {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* 2-7 */
+#leftSide{
+  float: left;
+  width: 200px; height: 700px;
+  text-align: center;
+  background-color: #eceaea;
+}
+
+/*섹션영역*/
+/* 2-8 */
+section {
+  width: 600px; height: 700px;
+  text-align: center;
+  padding: 20px;
+  display: inline-block;
+  h2 {
+    margin-top: 0;
+  }
+}
+
+/*회원가입 폼영역*/
+/* 2-9 */
+form {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ccc;
+}
+form legend {
+  padding-top: 20px;
+}
+/* 2-10 */
+form fieldset {
+  border: none;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px; padding-right: 20px;
+  margin: 0 auto;
+}
+form ul {
+  padding: 0px;
+}
+/* 2-11 */
+form li {
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  list-style: none;
+  margin-bottom: 5px;
+  padding: 7px;
+}
+/* 2-12 */
+label {
+  float: left;
+  width: 130px;
+}
+/* 2-13 */
+input {
+  width: 250px;
+  padding: 3px;
+}
+/* 2-14 */
+button {
+  width: 150px;
+  border: none;
+  border-radius: 30px;
+  background-color: #ddd;
+  padding: 15px;
+}
+#firstField {
+  legend{
+    padding-top: 15px;
+  }
+}
+#lastField {
+  padding-bottom: 30px;
+}
+/*우측 사이드영역*/
+#rightSide{
+  float: right;
+  width: 200px; height: 700px;
+  text-align: center;
+  background-color: #eceaea;
+}
+
+/*푸터 영역*/
+/* 2-15 */
+footer {
+  clear: both;
+  background-color: #ccc;
+  color: black;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}

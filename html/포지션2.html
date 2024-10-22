@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>포지션2</title>
+    <style>
+      header {
+        nav{
+          overflow: hidden; /* 주의하기 */
+          background-color: #ccc;
+          ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            li{
+              float: left;
+            }
+            .floatRight {
+              float: right;
+            }
+          }
+          a {
+            padding: 10px 20px;
+            display: block;
+            color: black;
+            text-decoration: none;
+          }
+          a:hover{
+            background-color: black;
+            color: white;
+          }
+        }
+      }
+      div {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        background-color: yellow;
+        border: 1px solid black;
+      }
+      #box1{
+        width: 200px;
+        background-color: aquamarine;
+      }
+      #box2{
+        width: 300px; height: 200px;
+        /* background-color: rgb(59, 87, 77); */
+        position: relative;
+        left: 80px;
+        top: -50px;
+        /* background: linear-gradient(45deg, blue, white 20%, red 50%, yellow 80%, green); */
+        /* background: radial-gradient(circle farthest-corner at 50% 50%, blue,white 30%, red); */
+        /* background: repeating-linear-gradient(45deg, rgb(241, 241, 170),rgb(241, 241, 170) 10%, rgb(185, 250, 185) 10%,rgb(185, 250, 185) 20% ); */
+        background: repeating-radial-gradient(circle farthest-corner at 50% 50%, blue, blue 10%,white 10%, white 20%);
+      }
+      #box3{
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+        position: relative;
+        div {
+          position: absolute;
+          /* 부모 속성 relative 필수 */
+        }
+        #box4 {
+          top: 0;
+          left: 0;
+          background: linear-gradient(45deg, red, red 50%, blue 50%, blue);
+        }
+        #box5 {
+          top: 0;
+          right: 0;
+          background: radial-gradient(circle closest-side at 30% 50%, yellow , red, white);
+        }
+        #box6 {
+          bottom: 0;
+          left: 0;
+        }
+        #box7 {
+          bottom: 0;
+          right: 0;
+        }
+        #box8 {
+          top: 115px;
+          left: 115px;
+          /* 가운데배치 */
+          z-index: 2;
+          /* z-index 값이 클수록 위에 배치됨 */
+        }
+        #box9 {
+          top: 100px;
+          left: 100px;
+          background-color: brown;
+          z-index: 1;
+        }
+        #box10 {
+          bottom: 100px;
+          right: 100px;
+          background-color: blueviolet;
+          z-index: 3;
+        }
+      }
+      #fix {
+        background-color: red;
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        font-weight: bold;
+        border-radius: 50%;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+        opacity: 0.5;
+      }
+      /* #hid {
+        display: none; 
+        visibility: hidden;
+        opacity: 0.5;
+         투명도 설정
+      } */
+      img:hover { /* :hover - 마우스 커서가 올라갔을때 '롤오버효과' */
+        opacity: 1;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li><a href="#">메뉴4</a></li>
+          <li class="floatRight"><a href="#">공지사항</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+    <div id="box3">박스3
+      <div id="box4">박스4</div>
+      <div id="box5">박스5</div>
+      <div id="box6">박스6</div>
+      <div id="box7">박스7</div>
+      <div id="box8">박스8</div>
+      <div id="box9">박스9</div>
+      <div id="box10">박스10</div>
+    </div>
+    <div id="fix">top</div>
+    <img src="img/dog/골댕이.jpg" alt="골댕이">
+    <img id="hid" src="img/dog/래브라도.jpg" alt="래브라도">
+    <img src="img/dog/포메.webp" alt="포메">
+  </body>
+</html>

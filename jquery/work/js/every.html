@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>every.html</title>
+</head>
+<body>
+  <script>
+    //기본형
+    let arr1 = [10,5,7,1,20];
+    arr1.sort();
+    console.log(arr1);
+
+    //객체 배열 정렬
+    let emps = [
+        {name:"tom", sal:400},
+        {name:"john", sal:200},
+        {name:"kim", sal:100},
+        {name:"choi", sal:600}
+    ]
+    //모든 사원의 급여가 200 이상인지 검사
+    //let result = emps.every(function(emp) {return emp.sal>=100})
+    //let result = emps.every(ele => ele.sal>=200);
+    let graterThen200 = ele => ele.sal>=200;
+    let result = emps.every(graterThen200);
+    console.log(result);
+  </script>
+</body>
+</html>

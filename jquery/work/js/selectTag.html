@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selectTag.html</title>
+</head>
+<body>
+  <select id="fruit" size="10" multiple="multiple" class="multiple">
+    <option value="banana">바나나</option>
+    <option value="apple" selected>사과</option>
+    <option value="kiwi">키위</option>
+  </select>
+  <button type="button" id="addBtn">→</button>
+  <button type="button" id="minusBtn">←</button>
+  <select id="mysel" size="10">
+  </select>
+  <script>
+    //option 추가
+    document.querySelector('.multiple').addEventListener('click',function() {
+      let checked = document.querySelectorAll('#mysel');
+      checked.forEach(element => {
+        if(checked.dataset.checked=='checked') {
+          console.log('checked')
+        }
+      });
+      document.querySelector('#mysel').add(fruit.options[fruit.selectedIndex]);
+    })
+    document.querySelector('#minusBtn').addEventListener('click',function() {
+      document.querySelector('#fruit').add(mysel.options[mysel.selectedIndex]);
+    })
+  </script>
+</body>
+</html>

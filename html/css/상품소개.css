@@ -1,0 +1,32 @@
+#container {
+  text-align: center;
+  
+  #check {
+    text-align: center;
+    border: solid 1px #ccc; /* 테두리 1px 실선 색상#ccc */
+    p {
+      font-size: 21px;
+      font-weight: bold;
+    }
+    h1 {
+      margin-top: 0%;
+      text-align: left;
+      background-color: black;
+      color: white;
+      font-size: 13px;
+      line-height: 2; /* 세로칸 크기 조절 */
+      text-indent: 10px; /* 첫글자 들여쓰기 */
+    }
+    h2 {
+      font-size: 18px;
+      color: red;
+    }
+    .blueText {
+      color: blue;
+    }
+    .fontSize {
+      font-size: 10px;
+    }
+  }
+}
+

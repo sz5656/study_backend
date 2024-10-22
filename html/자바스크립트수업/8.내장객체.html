@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내장객체</title>
+</head>
+<body>
+  <h1>내장객체</h1>
+  <script>
+    // 날짜와 시간 데이터 -> Date객체
+    let today = new Date();
+    console.log(today);
+    console.log("년: " + today.getFullYear());
+    console.log("월: " + today.getMonth()+1); //Month는 0부터 가지고옴
+    console.log("일: " + today.getDate());
+    console.log("요일: " + today.getDay()); // 일 ~ 토 => 0 ~ 6
+    console.log("시: " + today.getHours());
+    console.log("분: "+ today.getMinutes());
+    console.log("초: "+ today.getSeconds());
+    console.log("Time: "+ today.getTime()); // 1970~현재까지 
+    console.log(new Date(1)); // 1970년 1월 1일 0시 0분 0초
+    console.log(new Date(1721962028956)); // 1/1000 (초)단위로 출력됨
+    
+    console.log(today.toLocaleString());
+    console.log(today.toLocaleDateString());
+    console.log(today.toLocaleTimeString());
+
+    let xmax = new Date(2024,11,25);
+    console.log(xmax);
+    let startDay = new Date("2024-07-01");
+    console.log(startDay);
+
+    // 올해 크리스마스까지 며칠남았는가?
+    let dday = Math.floor((xmax - today)/(1000*60*60*24));
+    console.log(dday);
+
+    // 지금까지 교육원에 며칠됨?
+    console.log(Math.floor((today-startDay)/(1000*60*60*24)));
+
+    // 원하는 범위의 난수 만들기 random() * (최대값 - 최소값 + 1) + (최소값)
+    Math.floor(Math.random() * 10 + 1);
+
+    // 수학객체
+    // 객체를 생성하지 않고 바로 사용
+    // 1~100사이의 무작위수 발생 => 10개
+    let randomNums = [];
+    for(let i = 0; i < 10; i++) {
+      randomNums[i] = Math.floor(Math.random() * 100 + 1);
+    }
+    console.log(randomNums);
+
+    // let lotto = [];
+    // let lottoLine = 1;
+    // for(let i = 0; i < 25; i++) {
+    //   let first = Math.floor(Math.random() * 45 + 1);
+    //   if(lottoLine > 1) {
+    //     for(let j = lottoLine; j < lottoLine+5; j++) {          
+    //       lotto[i] = first;
+    //       if(lotto[i] == lotto[j]) j--;
+    //     }
+    //     lotto[i] = first;
+    //   } else {
+    //     for(let j = lottoLine; j < lottoLine+5; j++) {
+    //       lotto[i] = first;
+    //       if(lotto[i] == lotto[j]) j--;
+    //       }
+    //     }
+    //     lottoLine *= 5;  
+    //     console.log(`i : ${i}`);
+    //   }
+      
+    
+    console.log(lotto);
+    // 정규표현식 : 일정한 패턴에 일치하는 데이터 검증, 추출, 교체
+    let telNum = '010-4444-444팔'; // 형식에 맞지 않음
+    let regExp = /^\d{3}-\d{4}-\d{4}$/;
+    console.log(regExp.test(telNum)); // false
+    telNum = '010-4444-4448'; // 형식에 맞음
+    console.log(regExp.test(telNum)); // true
+    /*=========================================================*/
+    let text = "Is this all there is";
+    let regExp2 = /is/ig; // is를 대소문자 관계없이 찾겠다
+    console.log(text.match(regExp2)); // regExp2와 매칭되는것을 추출
+    console.log(text.replace(regExp2, 'LOVE')); // regExp2와 매칭되는것을 'LOVE'로 변경
+    /*toFixed(소수 자리수)*/
+
+    //String
+    const num = 7788;
+    console.log(num.toString()); // 숫자7788 => 문자7788
+  </script>
+</body>
+</html>

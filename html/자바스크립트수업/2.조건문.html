@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+  <style>
+    .fontStyle {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>조건문</h1>
+  <script>
+    // 조건문
+    // if
+    // 양수 구별
+    /*let su = prompt("숫자를 입력하세요");
+    if(su>0) {
+      alert(`su=${su}는 양수`);
+    } else if(su==0) {
+      alert(`su=${su}는 0`);
+    } else if(su<0) {
+      alert(`su=${su}는 음수`);
+    } else {
+      alert(`su=${su}는 숫자가 아닙니다`);
+    }
+    */
+    // 어떤 수가 홀수면 3을 더해서 출력
+    // 짝수면 4를 더해서 출력(console출력)
+    /*let n = prompt("숫자를 입력하세요");
+    console.log(typeof(n)); // n의 type체크 -> string
+    if(n%2==1) {
+      console.log(`${n}:홀수 ${n} + 3 = ${(Number(n)+3)}`)
+    } else {
+      console.log(`${n}:짝수 ${n} + 4 = ${(Number(n)+4)}`)
+  }
+  console.log(`end`);*/
+
+  /*--------------------------------------------------------------*/
+
+    // 총점 = 국어 + 영어 + 수학
+    // 평균 = 총점/3
+    /*let korean = prompt("국어 점수 입력");
+    let english = prompt("영어 점수 입력");
+    let math = prompt("수학 점수 입력");
+
+    let tot = (Number(korean) + Number(english) + Number(math))
+    let avg = (tot/3);
+    let grade;
+    if(korean>100 || english>100 || math>100 || korean<0 || english<0 || math<0) {
+      document.write(`<p>당신의 평균점수는 ${avg}점 <span class="fontStyle">제대로입력해라</span></p>`);
+    } else {
+        if(avg>=90) {
+        grade = "A";
+      } else if(avg>=80) {
+        grade = "B";
+      } else if(avg>=70) {
+        grade = "C";
+      } else if(avg>=60) {
+        grade = "D";
+      } else {
+        grade = "E";
+      }
+      document.write(`<p>당신의 평균점수는 ${avg}점 이고 등급은 <span class="fontStyle">${grade}</span> 입니다</p>`);
+    }*/
+
+   /*--------------------------------------------------------------*/
+
+    //  삼항 연산자
+    /*let su = 55;
+    (su % 2 != 0) ? alert(`${su}->홀수`) : alert(`${su}->짝수`);*/
+
+    /*-------------------------------------------------------------*/
+
+    // switch 이용
+    // 등급을 입력 받아서
+    // 1,2 -> 우수회원
+    // 3,4 -> 일반회원
+    // 5,6 -> 임시회원
+    // 나머지 -> 손님(출력 : 콘솔창)
+    /*let grade = prompt("등급을 입력하세요 (1~n)");
+    switch(grade) {
+      case "1":
+      case "2": console.log(`우수회원`); break;
+      case "3":
+      case "4": console.log(`일반회원`); break;
+      case "5":
+      case "6": console.log(`임시회원`); break;
+      default: console.log(`손님`);
+    }*/
+
+    /*------------------------------------------------------------*/
+
+    //입장객 수 10, -> MenNum
+    //한줄에 3명씩 -> colNum
+    //몇줄 -> rowNum
+
+    let MenNum = 10;
+    let colNum = 3;
+    let rowNum;
+    rowNum = Math.ceil(MenNum/colNum);
+    alert(`필요한 줄 수 : ${rowNum}줄`);
+
+    /*------------------------------------------------------------*/
+    let a = prompt("a");
+    a%2 == 0 || alert("홀");
+    a%2 == 0 && alert("짝");
+  </script>
+</body>
+</html>

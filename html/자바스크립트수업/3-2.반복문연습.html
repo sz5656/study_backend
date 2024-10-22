@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3-2 Practice</title>
+  <style>
+    table { 
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      td {
+        border: 1px solid #ccc;
+        background-color: #eee;
+        padding: 10px;
+      }
+    }
+    div { 
+      float: left;
+      border: 1px solid red;
+      margin: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>반복문 연습</h1>
+  <script>
+    //1. 5행 3열의 표 만들기
+    let table1 = `<table>`;
+    for(i = 0; i < 5; i++) {
+      table1 += `<tr>`;
+      for(j = 0; j < 3; j++) {
+        table1 += `<td>(${i+1}, ${j+1})</td>`;
+      }
+      table1 += `</tr>`;
+    }
+    table1 += `</table>`;
+    document.write(table1);
+
+    // 1~n까지 3의 배수 출력(한줄에 출력)
+    // 마지막에 갯수 출력
+    let n = prompt("숫자를 입력하세요");
+    let cnt = 0;
+    let mul3 = `<p> 3의 배수는 : `;
+    if(n == null || n == '') {
+      do {
+        alert("숫자가 입력되지 않음");
+        n = prompt("숫자를 입력하세요");
+        console.log(n);
+      } while(n == null || n == '') 
+    }
+    for(i = 1; i <= n; i++) {
+      if(i%3 == 0) {
+        cnt++;
+        if(i+3 > n) {
+          mul3 += `${i}`;
+          break;
+        }
+        mul3 += `${i}`;
+        mul3 += `, `;
+      }
+    }
+    document.write(`${mul3} / 3의 배수의 개수는 : ${cnt}개`);
+    mul3 += `</p>`;
+
+    // 배열 데이터의 합, 최대값, 최소값 구하기.
+    let nums = [58, 87, -5, 0, 500, 777, -8, 60];
+    let maxNum = nums[0];
+    let minNum = nums[0];
+    let sumNum = 0;
+    // index - 반복문
+    // 반복문의 최종조건 nums.length
+    for(i = 0; i < nums.length; i++) {
+      if(nums[i] > maxNum) {
+        maxNum = nums[i];
+      }
+      if(nums[i] < minNum) {
+        minNum = nums[i];
+      }
+      sumNum += nums[i];
+    }
+    document.write(`<p>합 : ${sumNum} 최대값 : ${maxNum} 최소값 : ${minNum}</p>`);
+
+    // n단에서 m곱수까지 구구단 작성
+    n = prompt("n단");
+    let m = prompt("m곱수");
+    let gugudan = '';
+    for(i = n; i <= 9; i++) {
+      gugudan += `<div><h3>--${i}단--</h3>`;
+      for(j = 1; j <= m; j++) {
+        gugudan += `${i} x ${j} = ${i*j}<br>`;
+      }
+      gugudan += `</div>`;
+    }
+    document.write(gugudan);
+  </script>
+</body>
+</html>

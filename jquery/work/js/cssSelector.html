@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cssSelector.html</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <td>국어</td>
+      <td>영어</td>
+      <td>수학</td>
+      <td>합계</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td></td>
+    </tr>
+  </table>
+  영어합계:<input name="eng_total">
+  <script>
+    //2열 영어의 합을 구해서 input tag에 출력
+    window.onload = function() {
+      let total = 0;
+      let engLength = document.querySelectorAll('td:nth-child(2)').length;
+      for (let i = 1; i < engLength; i++) {
+        let eng = document.querySelectorAll('td:nth-child(2)')[i].innerHTML;
+        total += parseInt(eng);
+      }
+      document.getElementsByName('eng_total')[0].value = total;
+
+      // let strs = document.querySelectorAll('tr:nth-child(2) td');
+      
+      for (let j = 2; j <= engLength; j++) {
+        total = 0;
+        let strs = document.querySelectorAll(`tr:nth-child(${j}) td`);
+        for (let i = 0; i < strs.length; i++) {
+          let lastTd = document.querySelectorAll(`tr:nth-child(${j}) td:last-child`);
+          if(i === strs.length-1) {
+            lastTd[0].innerHTML = total;
+          } else {
+            total += Number(strs[i].innerHTML);
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

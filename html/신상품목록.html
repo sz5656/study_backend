@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신상품 목록</title>
+    <style>
+      #container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      ul li {
+        float: left;
+        list-style: none;
+        padding: 0;
+        margin: 10px;
+        overflow: hidden;
+        position: relative; /* 부모에게 위치받아오기 */
+      }
+      ul li:hover .caption{
+        /* transform: translateY(-200px);
+        transition: 4ms; */
+        /* opacity: 1; */
+        visibility: visible;
+        display: block;
+      }
+      img {
+        width: 300px; height: 200px;
+      }
+      .caption{
+        width: 300px; height: 200px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        position: absolute;
+        /* top: 200px; */
+        top: 0;
+        text-align: center;
+        color: #fff;
+        transition: 1s;
+        /* opacity: 0; */
+        display: none;
+        z-index: 10;
+      }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <ul>
+      <li>
+        <img src="img/레드향.jpg" alt="레드향">
+        <div class="caption">
+          <h2>상품1</h2>
+          <p>상품설명 텍스트</p>
+          <p>가격 : 12,345원</p>
+        </div>
+      </li>
+      <li>
+        <img src="img/레드향.jpg" alt="레드향">
+        <div class="caption">
+          <h2>상품1</h2>
+          <p>상품설명 텍스트</p>
+          <p>가격 : 12,345원</p>
+        </div>
+      </li>
+      <li>
+        <img src="img/레드향.jpg" alt="레드향">
+        <div class="caption">
+          <h2>상품1</h2>
+          <p>상품설명 텍스트</p>
+          <p>가격 : 12,345원</p>
+        </div>
+      </li>
+      <li>
+        <img src="img/레드향.jpg" alt="레드향">
+        <div class="caption">
+          <h2>상품1</h2>
+          <p>상품설명 텍스트</p>
+          <p>가격 : 12,345원</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

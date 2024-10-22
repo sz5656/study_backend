@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice</title>
+  <style>
+    table {
+      border: 1px solid black;
+      td {
+        border: 1px solid black;
+      }
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // if문제 1,2번
+    // 1
+    /*
+    let num = prompt("숫자를 입력하세요");
+    let Checkday = num%7;
+    let day;7
+    switch(Checkday) {
+      case 0: day = "일요일";
+      break;
+      case 1: day = "월요일";
+      break;
+      case 2: day = "화요일";
+      break;
+      case 3: day = "수요일";
+      break;
+      case 4: day = "목요일";
+      break;
+      case 5: day = "금요일";
+      break;
+      default : day = "토요일";
+    }
+    console.log(`${day} 입니다`);
+    */
+    // 2
+    /*
+    let age = Number(prompt("나이를 입력하세요"));
+    (age >= 18) ? alert(`${age}세 판매 가능`) : alert(`${age}세 판매 불가!`);
+    */
+    // 반복문 1~7번
+    // 1
+    /*
+    let aSum = 0; //홀수
+    let bSum = 0; //짝수
+    for(let i = 1; i <= 100; i++) {
+      (i%2==0) ? bSum += i : aSum += i;
+    }
+    console.log(`홀수 합 : ${aSum} / 짝수 합 : ${bSum}`);
+
+    let fiveSum = 0;
+    for(let i = 1; i <= 100; i++) {
+      if(i%5==0) fiveSum += i; 
+    }
+    console.log(`5의 배수의 합 : ${fiveSum}`);
+
+    let n = prompt("숫자를 입력하세요");
+    let nMul = 1;
+    for(let i = 1; i <= n; i++) {
+      nMul *= i;
+    }
+    console.log(nMul);
+    */
+    // 4 구구단 패스
+    /* for(let i=2; i<=9; i++) {
+      for(let j=1; j<=9; j++) {
+        console.log(`${i} x ${j} = ${i*j}`);
+      }
+    } */
+    // 5
+    /*
+    let n5 = prompt("문제 5번 : 숫자를 입력하세요");
+    if(n5 == null) console.log("숫자를 입력하지 않았습니다");
+    else {
+      (n5%4==0) ? console.log("4의배수입니다") : console.log("4의배수가 아닙니다");
+    }
+    // 6
+    let n6 = prompt("문제 6번 : 숫자를 입력하세요");
+    let mulThree = "";
+    let checkThree = 0;
+    for(let i = 1; i <= n6; i++) {
+      if(i%3==0){
+        mulThree += i;
+        checkThree++;
+        if((i+3) < n6) mulThree += ",";
+      }
+    }
+    console.log(mulThree);
+    console.log(`${n6}까지의 3의 배수 개수 : ${checkThree}`);
+    */
+
+    //7
+    /* let audience = prompt("관객수를 입력하세요");
+    let seats = prompt("한 줄에 앉을 사람 수를 입력하세요");
+    let rowSeats = Math.ceil(audience/seats);
+    let m6Table = `<table>`;
+    let tmp = 1;
+    for(let i = 0; i < rowSeats; i++) {
+      m6Table += `<tr>`;
+        for(let j = 0; j < seats; j++) {
+          m6Table += `<td>좌석 ${tmp}</td>`;
+          if(tmp == audience) break;
+          tmp++;
+        }
+        m6Table += `</tr>`;
+    }
+    m6Table += `</table>`;
+    document.write(m6Table); */
+
+    //8
+
+    /*
+    let stars = `<div>`;
+    let conStars = '';
+    for(let i = 5; i > 0; i--) {
+      stars += `<p>`;
+      for(let j = 0; j < 6; j++) {
+        if(j >= i) {
+          stars += `*`;
+          conStars += `*`;
+        } 
+        else {
+          stars += `&nbsp`;
+          conStars += ` `;
+        }
+      }
+      console.log(conStars);
+      conStars = '';
+      stars += `</p>`;
+    }
+    stars += `</div>`;
+    document.write(stars);
+    */
+
+    //9
+    let rhombus = `<div>`;
+    let starLeng = Number(prompt("별 길이?"));
+    let harfR = Math.floor(starLeng/2); // 절반
+    if(starLeng%2!=0) {
+      for(let i = 1; i <= harfR+1; i++) {
+        let stars = (2*i)-1; // 한줄당 별의 개수
+        rhombus += `<p>`;
+        for(let j = harfR+1; j > i; j--) {
+          rhombus += `&nbsp`;
+        }
+        for(let j = 0; j < stars; j++){
+          rhombus += `*`;
+        }
+        rhombus += `</p>`;
+      }
+    } else {
+      for(let i = 1; i <= harfR; i++) {
+        let stars = (2*i)-1; // 한줄당 별의 개수
+        rhombus += `<p>`;
+        for(let j = harfR; j > i; j--) {
+          rhombus += `&nbsp`;
+        }
+        for(let j = 0; j < stars; j++) {
+          rhombus += `*`;
+        }
+        rhombus += `</p>`;
+      }
+    }  
+    
+    for(let i = harfR; i >= 1; i--) {
+      let stars = (2*i)-1; // 한줄당 별의 개수
+      rhombus += `<p>`;
+      if(starLeng%2 != 0) {
+        for(let j = harfR+1; j > i; j--) {
+          rhombus += `&nbsp`;
+        }
+        for(let j = 0; j < stars; j++) {
+          rhombus += `*`;
+        }
+      } else {
+        for(let j = harfR; j > i; j--) {
+          rhombus += `&nbsp`;
+        }
+        for(let j = 0; j < stars; j++) {
+          rhombus += `*`;
+        }
+      }
+      rhombus += `</p>`;
+    }   
+    document.write(rhombus);
+  </script>
+</body>
+</html>

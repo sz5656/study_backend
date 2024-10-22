@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>practice</title>
+  <style>
+    .fontStyle {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    //연습문제 1, 2
+    let width = prompt("가로");
+    let height = prompt("세로");
+    alert(`사각형의 넓이는 ${width} * ${height} = ${width*height}`);
+    
+    let birth = prompt("출생년도를 입력하세요");
+    const DATE = new Date();
+    let year = Number(DATE.getFullYear());
+    console.log(year);
+    let userAge = year-birth;
+    document.write(`<p>태어난 연도는 <span class="fontStyle">${birth}</span>년이고, <br>나이는 <span class="fontStyle">${userAge}</span>살 입니다</p>`);
+  </script>
+</body>
+</html>

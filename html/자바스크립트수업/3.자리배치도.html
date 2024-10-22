@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자리배치도</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    #container {
+      text-align: center;
+      margin: 0 auto;
+    }
+    table {
+      display: inline-block;
+      border: 1px solid black;
+      tr td {
+        border: 1px solid black;
+        padding: 10px;
+        background-color: #ccc;
+      }
+      border-collapse: collapse;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>자리배치도</h1>
+    <script>
+      let audience = prompt("입장객의 수");
+      let seats = prompt("한줄에 앉을 사람 수");
+      let seatsNum = 1;
+      let rowNum = Math.ceil(audience/seats);
+      let tmp = 1; // 사용된 좌석수 계산
+      let layout;
+      layout=`<table>`;
+      for(let i = 1; i <= rowNum; i++) {
+        layout += `<tr>`;
+          for(let j = 1; j <= seats; j++) {
+            layout += `<td>좌석 ${seatsNum}</td>`;
+            tmp++;
+            if(tmp > audience) {
+              let nullSeat = seats-j; // 남은 좌석수 계산
+              for(let k = 1; k <= nullSeat; k++) {
+                layout += `<td></td>`;
+              }
+              /* console.log(tmp); */
+              break;
+            }
+            seatsNum++;
+          }
+          layout +=`</tr>`;
+      }
+      layout += `</table>`;
+      console.log(layout);
+      document.write(layout);
+    </script>
+  </div>
+</body>
+</html>

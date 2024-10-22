@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    /* boxsizing-borderbox */
+    /* #border-box {
+      width: 800px;
+      border: 1px solid black;
+      margin: 0 auto;
+    } */
+    #container {
+      width: 800px;
+      margin: 0 auto;
+    }
+    header {
+      /* padding-left: 40px;
+      padding-right: 40px; */
+      overflow: hidden;
+      h1 {
+        text-align: center;
+      }
+      nav {
+        background-color: rgb(0, 0, 0);
+        height: 40px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+      }
+      nav ul li{
+      float: left;
+      list-style-type: none;
+      width: 100px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        }
+      }
+      nav ul li a:hover {
+        background-color: pink;
+        a{
+          color: black;
+        }
+      }
+      #notice {
+        /* float: right; */
+        margin-right: 30px;
+      }
+      nav ul li a:active {
+        background-color: rebeccapurple;
+      }
+    }
+    input:focus {
+      background-color: yellow;
+    }
+    input:enabled {
+      background-color: aquamarine;
+    }
+    /* input:disabled {
+      background-color: #f00;
+    } */
+    nav li:nth-child(3n+1) a{
+      background-color: beige;
+      color: black;
+    }
+    form ul {
+      padding: 0;
+    }
+    form input {
+      width: 310px;
+      padding-left: 5px;
+    }
+    form label {
+      text-align: center;
+    }
+    form {
+      width: 500px;
+      margin: 10px auto;
+      background-color: #ccc;
+      li {
+        margin-bottom: 10px;
+        list-style: none;
+        background-color: rgba(255,255,255,0.5);
+        /* background-color: white;  
+        opacity: 0.5; */
+      }
+      button {
+        width: 100px;
+        /* height: 100px; */
+        background-color: pink;
+        border-radius: 30px;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #222;
+        color: white;
+      }
+      fieldset {
+        margin: 10px;
+        label {
+          float: left;
+          width: 120px;
+        }
+      }
+      #butField{
+        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    nav li:last-child {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1>권우의 홈페이지 방문을 환영합니다</h1>
+      <nav>
+        <ul>
+          <li><a href="#">첫번째 메뉴</a></li>
+          <li><a href="#">두번째 메뉴</a></li>
+          <li><a href="#">세번째 메뉴</a></li>
+          <li><a href="#">네번째 메뉴</a></li>
+          <li id="notice"><a href="#">공지사항</a></li>
+        </ul>
+      </nav>
+    </header>
+    <form action="login.jsp" name="register" method="post">
+      <fieldset>
+        <legend>로그인 정보</legend>
+        <ul>
+          <li>
+            <label for="user_id">아이디</label>
+            <input type="text" name="user_id" id="user_id" autofocus>
+          </li>
+          <li>
+            <label for="user_pwd">비밀번호</label>
+            <input type="password" name="user_pwd" id="user_pwd">
+          </li>
+          <li>
+            <label for="user_pwdCheck">비밀번호 확인</label>
+            <input type="password" name="user_pwdCheck" id="user_pwdCheck">
+          </li>
+          <li>
+            <label for="userClass">회원 등급</label>
+            <input type="text" name="userClass" id="userClass" value="준회원">
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+          <li>
+            <label for="userName">이름</label>
+            <input type="text" name="userName" id="userName" placeholder="5자미만 공백없이">
+          </li>
+          <li>
+            <label for="userEmail">메일 주소</label>
+            <input type="email" name="userEmail" id="userEmail" placeholder="abcd@domain.com" disabled>
+          </li>
+          <li>
+            <label for="userPhone">연락처</label>
+            <input type="text" name="userPhone" id="userPhone">
+          </li>
+        </ul>
+      </fieldset>
+      <div id="butField">
+        <button type="submit">제출</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax.html</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h3>jquery ajax함수</h3>
+  <form action="" name="frm">
+    <input name="userid" value="park">
+    <input name="username" value="scott">
+    <input type="file" name="profile">
+  </form>
+  <button type="button" onclick="callAjax()">요청</button>
+  <button type="button" onclick="syncAjax()">sync요청</button>
+  <button type="button" onclick="postAjax()">post요청</button>
+  <button type="button" onclick="jsonAjax()">json요청</button>
+  <script>
+    let url = 'http://localhost/restServer/JsonServlet'
+
+    function callAjax() {
+      $.ajax(url+"?userid=park")
+      .done(result => console.log(result))
+      .always(() => {console.log("always")})
+    }
+
+    function postAjax() {
+      $.ajax(url,{
+        method : 'POST',
+        // contentType : ,
+        data : {userid : 'choi' }    //  => 'userid=choi'
+      })
+      .done(result => console.log(result));
+    }
+  </script>
+</body>
+</html>

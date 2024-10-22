@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array.html</title>
+</head>
+<body>
+  <script>
+    //기본형
+    let arr1 = [10,5,7,1,20];
+    arr1.sort();
+    console.log(arr1);
+
+    //객체 배열 정렬
+    let emps = [
+        {name:"tom", sal:400},
+        {name:"john", sal:200},
+        {name:"kim", sal:100},
+        {name:"choi", sal:600}
+    ]
+    //파괴함수
+    emps.sort((a,b) => {
+      a = a.name.toLocaleUpperCase();
+      b = b.name.toLocaleUpperCase();
+      if(a > b) {
+        return 1;
+      }
+      if(a < b) {
+        return -1;
+      }
+      return 0;
+    });
+    console.log(emps);
+
+    emps.sort((a,b) => a.sal - b.sal);
+    console.log(emps);
+    
+    //급여가 200이상인 사원만 출력
+    //filter 비파괴함수
+    let result = emps.filter( a=> a.sal>=200);
+    console.log(result);
+
+    //이름이 'jone' 검색
+    result = emps.find(a => a.name === 'john');
+    console.log(result.sal);
+    
+    //급여 2배 인상
+    result = emps.map(a => { return {...a,  sal:a.sal*2 } } );
+    console.log(emps);
+    console.log(result);
+
+    let arr2 = [];
+    for (const emp of emps) {
+      let newEmp = {name: emp.name, sal: emp.sal*2};
+      arr2.push(newEmp);
+    }
+    console.log(arr2);
+  </script>
+</body>
+</html>
