@@ -15,19 +15,13 @@ class Boot01ApplicationTests {
 	private EmpMapper empMapper;	
 	@Test
 	void contextLoads() {
-//		EmpVO empVO = new EmpVO();
-//		empVO.setLastName("Hong");
-//		empVO.setEmail("hong@hong.hong");
-//		empVO.setJobId("IT_PROG");
-//		
-//		int result = empMapper.insertInfo(empVO);
-//		assertEquals(result, 1);
-//		empVO.setLastName("Hong");
-//		empVO.setEmail("hong@hong.hong");
-//		empVO.setJobId("IT_PROG");		
-//		EmpVO empVO2 = empMapper.selectInfo(empVO);
-//		int delresult = empMapper.deleteInfo(empVO2.getEmployeeId());
-//		assertEquals(delresult, 1);
+		EmpVO empVO = new EmpVO();
+		empVO.setLastName("Hong");
+		empVO.setEmail("hong@hong.hong");
+		empVO.setJobId("IT_PROG");
+		
+		int result = empMapper.insertInfo(empVO);
+		assertEquals(result, 1);
 	}
 
 }

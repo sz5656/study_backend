@@ -54,11 +54,11 @@ public class EmpController {
 	//                  => QueryString + 객체 / 커맨드 객체
 	@PostMapping("empInsert")
 	public String empInsertProcess(EmpVO empVO) {
-		int result = empService.empInsert(empVO);
+		int eid = empService.empInsert(empVO);
 		String url = null;
-		if(result > 0) {
+		if(eid > -1) {
 			// 정상 등록
-			url = "redirect:empList";
+			url = "redirect:empInfo?employeeId="+eid;
 		} else {
 			// 등록되지 않은 경우
 			url = "redirect:empInsert";
@@ -78,13 +78,13 @@ public class EmpController {
 	}
 	// 수정 - 처리  : POST
 	// 1) AJAX => QueryString
-	@PostMapping("empUpdate")
+//	@PostMapping("empUpdate")
 	@ResponseBody // AJAX => Model 객체 X
 	public Map<String, Object> empUpdateAJAXQueryString(EmpVO empVO) {
 		return empService.empUpdate(empVO);
 	}
 	// 2) AJAX => JSON ( @RequestBody )
-	//@PostMapping("empUpdate")
+	@PostMapping("empUpdate")
 	@ResponseBody // AJAX => Model 객체 X
 	public Map<String, Object> empUpdateAJAXJSON(@RequestBody EmpVO empVO) {
 		return empService.empUpdate(empVO);

@@ -35,7 +35,7 @@
 		WHERE   employee_id = #{employeeId}
 	</select>
 	<!-- 등록 -->
-	<insert id="insertInfo" parameterType="EmpVO">
+	<insert id="insertInfoSeq" parameterType="EmpVO">
 		INSERT INTO employees 
 				(
 				    employee_id
@@ -65,13 +65,48 @@
 				   </if>
 			   )
 	</insert>
+	<!-- selectkey를 활용 -->
+	<insert id="insertInfo" parameterType="EmpVO">
+		<selectKey keyProperty="employeeId" resultType="Integer" order="BEFORE">
+			SELECT NVL(MAX(employee_id),0) + 1
+			FROM employees
+		</selectKey>
+		INSERT INTO employees 
+				(
+				    employee_id
+				   ,last_name
+				   ,email
+				   ,hire_date
+				   ,job_id
+				   <if test="salary > 0">
+				   ,salary
+				   </if>
+				)
+		VALUES (
+					#{employeeId}
+				   ,#{lastName}
+				   ,#{email}
+				   <choose>
+		    	   <when test="hireDate != null">
+				   ,#{hireDate}
+			   	   </when>
+			   	   <otherwise>
+		   		   ,sysdate
+			   	   </otherwise>
+				   </choose>
+				   ,#{jobId}
+				   <if test="salary > 0">
+				   ,#{salary}				   
+				   </if>
+			   )
+	</insert>
 	<!-- 수정 -->
 	<update id="updateInfo"> <!-- @Param("id") int id,@Param("emp") EmpVO empVO -->
 		UPDATE employees
 		SET    
 			   last_name = #{emp.lastName}
 			  ,email = #{emp.email}
-			  ,job_id = #{emp.jobID}
+			  ,job_id = #{emp.jobId}
 			  <if test="emp.salary > 0">
 			  ,salary = #{emp.salary}
 			  </if>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!-- setting -->
+ <!--/* 
+  ~{} : fragment 표현식
+  classpath:/templates/common/configs/default_config.html => ctxPathConfig
+  common/configs/default_config.html => ctxPathConfig
+ */-->
+ <div th:replace="~{common/configs/default_configs :: ctxPathConfig}"></div>
+ <th:block th:replace="~{common/configs/default_configs :: BootstrapConfig}"></th:block>
+</head>
+<body>
+    <div> <!--/*  */-->
+      <header th:insert="~{common/fragments/emp_header :: EmpHeader}"></header>
+      <main>
+        <th:block layout:fragment="Content"></th:block>
+
+      </main>
+    </div>
+</body>
+</html>

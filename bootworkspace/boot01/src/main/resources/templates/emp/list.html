@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org/">
+<html xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/default_layout}"
+      layout:fragment="Content">
 <head>
-<meta charset="UTF-8" name="contextPath" th:value="${contextPath}">
+<meta charset="UTF-8">
+<!-- bootstrap -->
+
 <title></title>
 <style>
   table, th, td {
@@ -10,9 +15,10 @@
 </style>
 </head>
 <body>
-  <div>
+  <div class="container">
+    
     <h3>전체 사원 조회</h3>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>No.</th>
