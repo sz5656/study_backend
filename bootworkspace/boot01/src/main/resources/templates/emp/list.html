@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8" name="contextPath" th:value="${contextPath}">
+<title></title>
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <h3>전체 사원 조회</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>사원번호</th>
+          <th>이름</th><!-- lastName-->
+          <th>입사일자</th><!-- yyyy년MM월dd일 -->
+          <th>업무</th>
+        </tr>
+      </thead>
+      <tbody id="empInfo">
+        <th:block th:each="info, cnt : ${emps}">
+          <!--/* 두 번째 변수 cnt : index, count, size, even, odd, first, last */-->
+          <!--/* 반복생성하고자 하는 태그 */-->
+          <tr><!--/* tr <=> info */-->
+            <td>[[${cnt.count}]]</td>
+            <td th:text="${info.employeeId}"/>
+            <td th:text="${info.lastName}"/>
+            <!--/*<td>[[ ${info.hireDate} ]]</td>*/-->
+            <td>[[ ${ #dates.format(info.hireDate, 'yyyy년MM월dd일') } ]]</td>
+            <td>[[ ${info.jobId} ]]</td>
+          </tr>
+        </th:block>
+      </tbody>
+    </table>
+  </div>
+</body>
+<script>
+let contextPath = document.querySelector('meta[name="contextPath"]').getAttribute('value');
+document.querySelector("#empInfo").addEventListener('click', function() {
+  let eTarget = event.target.parentNode.children[1];
+  if(eTarget) {
+    let eid = eTarget.innerText;    
+    location.href = `${contextPath}/empInfo?employeeId=${eid}`;
+  }
+})
+/*
+let trList = document.querySelectorAll('tbody tr');
+trList.forEach(function(tr) { 
+  tr.addEventListener('click', selectInfo);
+})
+
+function selectInfo(event) {
+  //field
+  //target : 이벤트가 발생한 태그
+  //currentTarget : target을 포함 이벤트 버블링을 통해 전달받은 태그까지 -> 유동
+  //method
+  //preventDefault() : 기본 이벤트 핸들러 일시 중지
+  //stopPropagation() : 이벤트 버블링 멈춤
+
+  let selectedTr = event.currentTarget;
+  let eid = selectedTr.querySelector('td:nth-of-type(2)').innerText;
+  let url = `/empInfo?employeeId=${eid}`;
+  location.href = url;
+}*/
+
+</script>
+</html>
