@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/board_layout}" 
+      layout:fragment="Content"
+      >
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+  <div class="container">
+    <form th:action="@{/boardInsert}" method="post" name="insertForm">
+      <h2>게시글 등록</h2>
+      <div class="row">
+        <div>
+          <label for="title">제목</label>
+          <input type="text" id="title" name="title" autofocus>
+        </div>
+
+        <div>
+          <label for="date">등록일</label>
+          <input type="text" name="regdate" id="curDate" placeholder="yy/MM/dd">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="content">내용</label>
+          <textarea name="content" style="height: 100px; width: 200px;"></textarea>
+        </div>
+        <div>
+          <label for="writer">작성자</label>
+          <input type="text" id="writer" name="writer">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="bImage">이미지</label>
+          <input type="text" id="image" name="image">
+        </div>
+        <div>
+          <button type="submit">등록</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+  document.querySelector('#curDate').value = new Date();
+  
+  insertForm.addEventListener('submit', insertBoard);
+
+  function insertBoard() {
+    event.preventDefault(); // 이벤트 일시 정지
+
+    let title = insertForm.querySelector('#title');
+    if(title.value == '') {
+      alert('제목을 입력하세요');
+      title.focus();
+      return;
+    }
+    let date = insertForm.querySelector('#curDate');
+    if(date.value == '') {
+      alert('date 입력하세요');
+      date.focus();
+      return;
+    }
+    let writer = insertForm.querySelector('#writer');
+    if(writer.value == '') {
+      alert('writer 입력하세요');
+      writer.focus();
+      return;
+    }
+    let content = insertForm.querySelector('#content');
+
+    let image = insertForm.querySelector('#image');
+    insertForm.submit();
+  }
+</script>
+</html>

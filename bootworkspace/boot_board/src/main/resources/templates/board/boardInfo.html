@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/board_layout}" 
+      layout:fragment="Content"
+      >
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+</head>
+<body>
+  <div class="container">
+    <h3>게시판</h3>
+    <table class="table text-center">
+      <tr>
+        <td>게시글번호</td>
+        <td>[[ ${board.bno} ]]</td>
+      </tr>
+      <tr>
+        <td>제목</td>
+        <td>[[ ${board.title} ]]</td>
+      </tr>
+      <tr>
+        <td>작성자</td>
+        <td>[[ ${board.writer} ]]</td>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td>[[ ${board.content} ]]</td>
+      </tr>
+      <tr>
+        <td>첨부이미지</td>
+        <td><img style="width: 10%;" th:src="@{/images/{fileName}(fileName=${board.image})}" alt=""></td>
+      </tr>
+      <tr>
+        <td>작성일자</td>
+        <td>[[ ${#dates.format(board.regdate,'yy년MM월dd일')} ]]</td>
+      </tr>
+    </table>
+  </div>
+  
+</body>
+</html>

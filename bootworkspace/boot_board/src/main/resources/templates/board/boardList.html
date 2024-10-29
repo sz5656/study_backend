@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/board_layout}" 
+      layout:fragment="Content"
+      >
+      <!--/* decorate : 경로 */-->
+      <!--/* fragment : layout의 이름 */-->
+<head>
+<meta charset="UTF-8">
+<!-- bootstrap -->
+<title></title>
+
+</head>
+<body>
+  <div class="container text-center">
+    
+    <h3>전체 게시글 조회</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>글제목</th>
+          <th>작성자</th>
+          <th>작성일자</th><!-- yy년MM월dd일 -->
+        </tr>
+      </thead>
+      <tbody id="boardInfo">
+        <th:block th:each="info, cnt : ${boards}">
+          <!--/* 두 번째 변수 cnt : index, count, size, even, odd, first, last */-->
+          <!--/* 반복생성하고자 하는 태그 */-->
+          <tr th:onclick="|location.href='@{/boardInfo(bno=${info.bno})}'|">
+            <td th:text="${info.bno}"/>
+            <td th:text="${info.title}"/>
+            <td>[[ ${info.writer} ]]</td>
+            <td>[[ ${ #dates.format(info.regdate, 'yy년MM월dd일') } ]]</td>
+          </tr>
+        </th:block>
+      </tbody>
+    </table>
+  </div>
+</body>
+<script>
+/*let contextPath = document.querySelector('meta[name="contextPath"]').getAttribute('value');*/
+/*document.querySelector("#boardInfo").addEventListener('click', function() {
+  let eTarget = event.target.parentNode.children[0];
+  if(eTarget) {
+    let bno = eTarget.innerText;    
+    location.href = `boardInfo?bno=${bno}`;
+  }
+})*/
+/*
+let trList = document.querySelectorAll('tbody tr');
+trList.forEach(function(tr) { 
+  tr.addEventListener('click', selectInfo);
+})
+
+function selectInfo(event) {
+  //field
+  //target : 이벤트가 발생한 태그
+  //currentTarget : target을 포함 이벤트 버블링을 통해 전달받은 태그까지 -> 유동
+  //method
+  //preventDefault() : 기본 이벤트 핸들러 일시 중지
+  //stopPropagation() : 이벤트 버블링 멈춤
+
+  let selectedTr = event.currentTarget;
+  let eid = selectedTr.querySelector('td:nth-of-type(2)').innerText;
+  let url = `/empInfo?employeeId=${eid}`;
+  location.href = url;
+}*/
+
+</script>
+</html>
