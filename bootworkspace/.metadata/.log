@@ -9979,3 +9979,2248 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SESSION 2024-11-12 15:59:44.817 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data D:/backEnd/bootworkspace -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-12 15:59:48.835
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.eclemma.core 4 0 2024-11-12 15:59:48.948
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [312]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+       org.jacoco.core [948]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+       org.jacoco.report [949]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2024-11-12 15:59:48.982
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [314]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+       org.jacoco.core [948]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.8.202311140945"; singleton:="true"
+       org.eclipse.eclemma.core [312]
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+              org.jacoco.report [949]
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-12 15:59:49.227
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2024-11-12 15:59:49.646
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [1135]
+  Unresolved requirement: Import-Package: org.glassfish.jersey.apache.connector
+    -> Export-Package: org.glassfish.jersey.apache.connector; bundle-symbolic-name="org.glassfish.jersey.connectors.jersey-apache-connector"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.client,jakarta.ws.rs.core,org.apache.http.client,org.apache.http.client.methods,org.apache.http.impl.client,org.glassfish.jersey.client,org.glassfish.jersey.client.spi,org.glassfish.jersey.internal.l10n,org.glassfish.jersey.internal.util,org.glassfish.jersey.spi"
+       org.glassfish.jersey.connectors.jersey-apache-connector [1164]
+         Unresolved requirement: Import-Package: org.glassfish.jersey.client; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.client; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.inject,jakarta.ws.rs,jakarta.ws.rs.client,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey,org.glassfish.jersey.client.inject,org.glassfish.jersey.client.spi,org.glassfish.jersey.http,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util,org.glassfish.jersey.internal.util.collection,org.glassfish.jersey.message,org.glassfish.jersey.message.internal,org.glassfish.jersey.spi"
+              org.glassfish.jersey.core.jersey-client [1165]
+                Unresolved requirement: Import-Package: org.glassfish.jersey; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util"
+                     org.glassfish.jersey.core.jersey-common [1166]
+                       Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+                Unresolved requirement: Import-Package: org.glassfish.jersey.http; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.http; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core"
+         Unresolved requirement: Import-Package: org.glassfish.jersey.client.innate; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.client.innate; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core,org.glassfish.jersey.client"
+  Unresolved requirement: Require-Bundle: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.5"
+    -> Bundle-SymbolicName: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.8"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2024-11-12 15:59:49.654
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [1136]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [1135]
+         Unresolved requirement: Import-Package: org.glassfish.jersey.apache.connector
+           -> Export-Package: org.glassfish.jersey.apache.connector; bundle-symbolic-name="org.glassfish.jersey.connectors.jersey-apache-connector"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.client,jakarta.ws.rs.core,org.apache.http.client,org.apache.http.client.methods,org.apache.http.impl.client,org.glassfish.jersey.client,org.glassfish.jersey.client.spi,org.glassfish.jersey.internal.l10n,org.glassfish.jersey.internal.util,org.glassfish.jersey.spi"
+              org.glassfish.jersey.connectors.jersey-apache-connector [1164]
+                Unresolved requirement: Import-Package: org.glassfish.jersey.client; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.client; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.inject,jakarta.ws.rs,jakarta.ws.rs.client,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey,org.glassfish.jersey.client.inject,org.glassfish.jersey.client.spi,org.glassfish.jersey.http,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util,org.glassfish.jersey.internal.util.collection,org.glassfish.jersey.message,org.glassfish.jersey.message.internal,org.glassfish.jersey.spi"
+                     org.glassfish.jersey.core.jersey-client [1165]
+                       Unresolved requirement: Import-Package: org.glassfish.jersey; version="[3.1.0,4.0.0)"
+                         -> Export-Package: org.glassfish.jersey; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util"
+                            org.glassfish.jersey.core.jersey-common [1166]
+                              Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+                       Unresolved requirement: Import-Package: org.glassfish.jersey.http; version="[3.1.0,4.0.0)"
+                         -> Export-Package: org.glassfish.jersey.http; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core"
+                Unresolved requirement: Import-Package: org.glassfish.jersey.client.innate; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.client.innate; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core,org.glassfish.jersey.client"
+         Unresolved requirement: Require-Bundle: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.5"
+           -> Bundle-SymbolicName: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.8"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.glassfish.jersey.core.jersey-common 4 0 2024-11-12 15:59:49.663
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.glassfish.jersey.core.jersey-common [1166]
+  Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-12 15:59:52.867
+!MESSAGE Logback config file: D:\backEnd\bootworkspace\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-11-12 15:59:53.569
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-12 15:59:53.569
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-11-12 15:59:54.129
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-12 15:59:54.129
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2024-11-12 15:59:56.691
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-11-12 15:59:56.691
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-12 16:00:02.450
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+D:\javaprogram\eclipse-jee-2023-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/backEnd/bootworkspace/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731394802449
+-Dlanguageserver.hover-timeout=225
+-jar
+D:\javaprogram\eclipse-jee-2023-12-R-win32-x86_64\eclipse\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:02.450
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-12 16:00:02.479
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 13808
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-11-12 16:00:03.422
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\admin'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:03.782
+!MESSAGE Boot project ADDED: Exam01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:03.783
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:03.786
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.jdt.junit.core 4 0 2024-11-12 16:00:04.455
+!MESSAGE Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+!STACK 0
+java.lang.IllegalStateException: Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport$JUnitPluginDescription.getLibraryEntry(BuildPathSupport.java:236)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport.getHamcrestLibraryEntry(BuildPathSupport.java:435)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.getNewContainer(JUnitContainerInitializer.java:147)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.initialize(JUnitContainerInitializer.java:108)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:3216)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:2164)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:3829)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3263)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3427)
+	at org.eclipse.jdt.internal.core.JavaProject.getResolvedClasspath(JavaProject.java:2548)
+	at org.springframework.tooling.jdt.ls.commons.BootProjectTracker.isSpringProject(BootProjectTracker.java:92)
+	at org.springframework.tooling.jdt.ls.commons.BootProjectTracker.processProject(BootProjectTracker.java:58)
+	at org.springframework.tooling.jdt.ls.commons.BootProjectTracker.<init>(BootProjectTracker.java:51)
+	at org.springframework.tooling.boot.ls.Startup.earlyStartup(Startup.java:33)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2762)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:04.506
+!MESSAGE Boot project ADDED: boot01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:04.507
+!MESSAGE Boot project ADDED: boot_board
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:04.507
+!MESSAGE Boot project ADDED: demo
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:04.547
+!MESSAGE Boot project ADDED: jpa
+
+!ENTRY org.eclipse.jdt.junit.core 4 0 2024-11-12 16:00:04.755
+!MESSAGE Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+!STACK 0
+java.lang.IllegalStateException: Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport$JUnitPluginDescription.getLibraryEntry(BuildPathSupport.java:236)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport.getHamcrestLibraryEntry(BuildPathSupport.java:435)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.getNewContainer(JUnitContainerInitializer.java:147)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.initialize(JUnitContainerInitializer.java:108)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:3216)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:2164)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:3829)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3263)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3427)
+	at org.eclipse.jdt.internal.core.JavaProject.getResolvedClasspath(JavaProject.java:2548)
+	at org.springframework.ide.eclipse.boot.core.BootPropertyTester.isBootProject(BootPropertyTester.java:130)
+	at org.springframework.ide.eclipse.boot.dash.model.BootProjectDashElementFactory.createOrGet(BootProjectDashElementFactory.java:53)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.ide.eclipse.boot.dash.model.LocalBootDashModel.doUpdateElementsFromWorkspace(LocalBootDashModel.java:312)
+	at org.springframework.ide.eclipse.boot.dash.model.LocalBootDashModel$5.run(LocalBootDashModel.java:299)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:32.269
+!MESSAGE Classpath changed for project: catch-erp
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-12 16:00:32.281
+!MESSAGE Cannot invoke "org.eclipse.jdt.core.IClasspathEntry.getPath()" because the return value of "org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.getJreContainer(org.eclipse.jdt.core.IClasspathEntry[])" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.jdt.core.IClasspathEntry.getPath()" because the return value of "org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.getJreContainer(org.eclipse.jdt.core.IClasspathEntry[])" is null
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.resolve(ClasspathUtil.java:98)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:130)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:00:32.894
+!MESSAGE Classpath changed for project: catch-erp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:01:16.539
+!MESSAGE Classpath changed for project: catch-erp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-12 16:01:16.540
+!MESSAGE Boot project ADDED: catch-erp
+
+!ENTRY org.eclipse.jface 2 0 2024-11-12 16:01:27.784
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-11-12 16:01:27.784
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(net.harawata.mybatipse.CopyLogStatement,Copy MyBatis Statement,
+		Copy MyBatis statement in the Console View as an executable SQL statement.,
+		Category(net.harawata.mybatipse.commandCategory,MyBatipse,null,true),
+		WorkbenchHandlerServiceHandler("net.harawata.mybatipse.CopyLogStatement"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2024-11-13 10:31:15.662 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-13 10:31:24.345
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.eclemma.core 4 0 2024-11-13 10:31:24.620
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [312]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+       org.jacoco.report [949]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+              org.jacoco.core [948]
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2024-11-13 10:31:24.658
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [314]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+       org.jacoco.core [948]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.8.202311140945"; singleton:="true"
+       org.eclipse.eclemma.core [312]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+              org.jacoco.report [949]
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-13 10:31:25.111
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2024-11-13 10:31:26.012
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [1135]
+  Unresolved requirement: Require-Bundle: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.5"
+    -> Bundle-SymbolicName: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.8"
+       org.glassfish.jersey.core.jersey-client [1165]
+         Unresolved requirement: Import-Package: org.glassfish.jersey.http; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.http; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core"
+              org.glassfish.jersey.core.jersey-common [1166]
+                Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+         Unresolved requirement: Import-Package: org.glassfish.jersey; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util"
+  Unresolved requirement: Import-Package: org.glassfish.jersey.apache.connector
+    -> Export-Package: org.glassfish.jersey.apache.connector; bundle-symbolic-name="org.glassfish.jersey.connectors.jersey-apache-connector"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.client,jakarta.ws.rs.core,org.apache.http.client,org.apache.http.client.methods,org.apache.http.impl.client,org.glassfish.jersey.client,org.glassfish.jersey.client.spi,org.glassfish.jersey.internal.l10n,org.glassfish.jersey.internal.util,org.glassfish.jersey.spi"
+       org.glassfish.jersey.connectors.jersey-apache-connector [1164]
+         Unresolved requirement: Import-Package: org.glassfish.jersey.client; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.client; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.inject,jakarta.ws.rs,jakarta.ws.rs.client,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey,org.glassfish.jersey.client.inject,org.glassfish.jersey.client.spi,org.glassfish.jersey.http,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util,org.glassfish.jersey.internal.util.collection,org.glassfish.jersey.message,org.glassfish.jersey.message.internal,org.glassfish.jersey.spi"
+         Unresolved requirement: Import-Package: org.glassfish.jersey.client.innate; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.client.innate; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core,org.glassfish.jersey.client"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2024-11-13 10:31:26.017
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [1136]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [1135]
+         Unresolved requirement: Require-Bundle: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.5"
+           -> Bundle-SymbolicName: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.8"
+              org.glassfish.jersey.core.jersey-client [1165]
+                Unresolved requirement: Import-Package: org.glassfish.jersey.http; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.http; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core"
+                     org.glassfish.jersey.core.jersey-common [1166]
+                       Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+                Unresolved requirement: Import-Package: org.glassfish.jersey; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util"
+         Unresolved requirement: Import-Package: org.glassfish.jersey.apache.connector
+           -> Export-Package: org.glassfish.jersey.apache.connector; bundle-symbolic-name="org.glassfish.jersey.connectors.jersey-apache-connector"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.client,jakarta.ws.rs.core,org.apache.http.client,org.apache.http.client.methods,org.apache.http.impl.client,org.glassfish.jersey.client,org.glassfish.jersey.client.spi,org.glassfish.jersey.internal.l10n,org.glassfish.jersey.internal.util,org.glassfish.jersey.spi"
+              org.glassfish.jersey.connectors.jersey-apache-connector [1164]
+                Unresolved requirement: Import-Package: org.glassfish.jersey.client; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.client; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.inject,jakarta.ws.rs,jakarta.ws.rs.client,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey,org.glassfish.jersey.client.inject,org.glassfish.jersey.client.spi,org.glassfish.jersey.http,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util,org.glassfish.jersey.internal.util.collection,org.glassfish.jersey.message,org.glassfish.jersey.message.internal,org.glassfish.jersey.spi"
+                Unresolved requirement: Import-Package: org.glassfish.jersey.client.innate; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.client.innate; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core,org.glassfish.jersey.client"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.glassfish.jersey.core.jersey-common 4 0 2024-11-13 10:31:26.029
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.glassfish.jersey.core.jersey-common [1166]
+  Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-13 10:31:40.391
+!MESSAGE Logback config file: D:\backEnd\bootworkspace\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-11-13 10:31:41.345
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-13 10:31:41.345
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-11-13 10:31:41.912
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-13 10:31:41.912
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2024-11-13 10:31:45.019
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-11-13 10:31:45.019
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-13 10:31:54.527
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+D:\javaprogram\eclipse-jee-2023-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/backEnd/bootworkspace/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731461514527
+-Dlanguageserver.hover-timeout=225
+-jar
+D:\javaprogram\eclipse-jee-2023-12-R-win32-x86_64\eclipse\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:54.528
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-13 10:31:54.556
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 7860
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-11-13 10:31:55.896
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\admin'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.junit.core 4 0 2024-11-13 10:31:56.997
+!MESSAGE Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+!STACK 0
+java.lang.IllegalStateException: Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport$JUnitPluginDescription.getLibraryEntry(BuildPathSupport.java:236)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport.getHamcrestLibraryEntry(BuildPathSupport.java:435)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.getNewContainer(JUnitContainerInitializer.java:147)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.initialize(JUnitContainerInitializer.java:108)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:3216)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:2164)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:3829)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3263)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3427)
+	at org.eclipse.jdt.internal.core.JavaProject.getResolvedClasspath(JavaProject.java:2548)
+	at org.springframework.ide.eclipse.boot.core.BootPropertyTester.isBootProject(BootPropertyTester.java:130)
+	at org.springframework.ide.eclipse.boot.dash.model.BootProjectDashElementFactory.createOrGet(BootProjectDashElementFactory.java:53)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.ide.eclipse.boot.dash.model.LocalBootDashModel.doUpdateElementsFromWorkspace(LocalBootDashModel.java:312)
+	at org.springframework.ide.eclipse.boot.dash.model.LocalBootDashModel$5.run(LocalBootDashModel.java:299)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:57.551
+!MESSAGE Boot project ADDED: Exam01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:57.552
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:57.553
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:57.554
+!MESSAGE Boot project ADDED: boot01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:57.555
+!MESSAGE Boot project ADDED: boot_board
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:57.555
+!MESSAGE Boot project ADDED: catch-erp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:57.556
+!MESSAGE Boot project ADDED: demo
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-13 10:31:57.556
+!MESSAGE Boot project ADDED: jpa
+
+!ENTRY org.eclipse.jface 2 0 2024-11-13 10:32:13.540
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-11-13 10:32:13.540
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(net.harawata.mybatipse.CopyLogStatement,Copy MyBatis Statement,
+		Copy MyBatis statement in the Console View as an executable SQL statement.,
+		Category(net.harawata.mybatipse.commandCategory,MyBatipse,null,true),
+		WorkbenchHandlerServiceHandler("net.harawata.mybatipse.CopyLogStatement"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2024-11-14 09:15:03.807 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-14 09:15:14.170
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.eclemma.core 4 0 2024-11-14 09:15:14.418
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [312]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+       org.jacoco.core [948]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+       org.jacoco.report [949]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2024-11-14 09:15:14.461
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [314]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.8.202311140945"; singleton:="true"
+       org.eclipse.eclemma.core [312]
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+              org.jacoco.core [948]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+              org.jacoco.report [949]
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-14 09:15:14.827
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2024-11-14 09:15:15.805
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [1135]
+  Unresolved requirement: Require-Bundle: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.5"
+    -> Bundle-SymbolicName: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.8"
+       org.glassfish.jersey.core.jersey-client [1165]
+         Unresolved requirement: Import-Package: org.glassfish.jersey; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util"
+              org.glassfish.jersey.core.jersey-common [1166]
+                Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+         Unresolved requirement: Import-Package: org.glassfish.jersey.http; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.http; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core"
+  Unresolved requirement: Import-Package: org.glassfish.jersey.apache.connector
+    -> Export-Package: org.glassfish.jersey.apache.connector; bundle-symbolic-name="org.glassfish.jersey.connectors.jersey-apache-connector"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.client,jakarta.ws.rs.core,org.apache.http.client,org.apache.http.client.methods,org.apache.http.impl.client,org.glassfish.jersey.client,org.glassfish.jersey.client.spi,org.glassfish.jersey.internal.l10n,org.glassfish.jersey.internal.util,org.glassfish.jersey.spi"
+       org.glassfish.jersey.connectors.jersey-apache-connector [1164]
+         Unresolved requirement: Import-Package: org.glassfish.jersey.client.innate; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.client.innate; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core,org.glassfish.jersey.client"
+         Unresolved requirement: Import-Package: org.glassfish.jersey.client; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.client; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.inject,jakarta.ws.rs,jakarta.ws.rs.client,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey,org.glassfish.jersey.client.inject,org.glassfish.jersey.client.spi,org.glassfish.jersey.http,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util,org.glassfish.jersey.internal.util.collection,org.glassfish.jersey.message,org.glassfish.jersey.message.internal,org.glassfish.jersey.spi"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2024-11-14 09:15:15.811
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [1136]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [1135]
+         Unresolved requirement: Require-Bundle: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.5"
+           -> Bundle-SymbolicName: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.8"
+              org.glassfish.jersey.core.jersey-client [1165]
+                Unresolved requirement: Import-Package: org.glassfish.jersey; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util"
+                     org.glassfish.jersey.core.jersey-common [1166]
+                       Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+                Unresolved requirement: Import-Package: org.glassfish.jersey.http; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.http; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core"
+         Unresolved requirement: Import-Package: org.glassfish.jersey.apache.connector
+           -> Export-Package: org.glassfish.jersey.apache.connector; bundle-symbolic-name="org.glassfish.jersey.connectors.jersey-apache-connector"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.client,jakarta.ws.rs.core,org.apache.http.client,org.apache.http.client.methods,org.apache.http.impl.client,org.glassfish.jersey.client,org.glassfish.jersey.client.spi,org.glassfish.jersey.internal.l10n,org.glassfish.jersey.internal.util,org.glassfish.jersey.spi"
+              org.glassfish.jersey.connectors.jersey-apache-connector [1164]
+                Unresolved requirement: Import-Package: org.glassfish.jersey.client.innate; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.client.innate; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core,org.glassfish.jersey.client"
+                Unresolved requirement: Import-Package: org.glassfish.jersey.client; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.client; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.inject,jakarta.ws.rs,jakarta.ws.rs.client,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey,org.glassfish.jersey.client.inject,org.glassfish.jersey.client.spi,org.glassfish.jersey.http,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util,org.glassfish.jersey.internal.util.collection,org.glassfish.jersey.message,org.glassfish.jersey.message.internal,org.glassfish.jersey.spi"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.glassfish.jersey.core.jersey-common 4 0 2024-11-14 09:15:15.836
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.glassfish.jersey.core.jersey-common [1166]
+  Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-14 09:15:45.548
+!MESSAGE Logback config file: D:\backEnd\bootworkspace\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-11-14 09:15:46.497
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-14 09:15:46.497
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-11-14 09:15:47.008
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-14 09:15:47.008
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2024-11-14 09:15:50.097
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-11-14 09:15:50.097
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jdt.junit.core 4 0 2024-11-14 09:15:59.232
+!MESSAGE Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+!STACK 0
+java.lang.IllegalStateException: Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport$JUnitPluginDescription.getLibraryEntry(BuildPathSupport.java:236)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport.getHamcrestLibraryEntry(BuildPathSupport.java:435)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.getNewContainer(JUnitContainerInitializer.java:147)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.initialize(JUnitContainerInitializer.java:108)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:3216)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:2164)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:3829)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3263)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3427)
+	at org.eclipse.jdt.internal.core.JavaProject.getResolvedClasspath(JavaProject.java:2514)
+	at org.eclipse.jdt.internal.core.PackageFragmentRoot.getRawClasspathEntry(PackageFragmentRoot.java:606)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.internalGetParent(PackageExplorerContentProvider.java:381)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.processDelta(PackageExplorerContentProvider.java:734)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.handleAffectedChildren(PackageExplorerContentProvider.java:815)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.processDelta(PackageExplorerContentProvider.java:758)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.handleAffectedChildren(PackageExplorerContentProvider.java:815)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.processDelta(PackageExplorerContentProvider.java:758)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.elementChanged(PackageExplorerContentProvider.java:139)
+	at org.eclipse.jdt.internal.core.DeltaProcessor$3.run(DeltaProcessor.java:1760)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.notifyListeners(DeltaProcessor.java:1748)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.firePostChangeDelta(DeltaProcessor.java:1581)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.fire(DeltaProcessor.java:1557)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:783)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:808)
+	at org.eclipse.jdt.internal.core.CompilationUnit.becomeWorkingCopy(CompilationUnit.java:98)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createFileInfo(CompilationUnitDocumentProvider.java:1017)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:481)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.connect(CompilationUnitDocumentProvider.java:1277)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4177)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:262)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1474)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.internalDoSetInput(JavaEditor.java:2556)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput(JavaEditor.java:2529)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1415)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$1(AbstractTextEditor.java:3167)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2292)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3184)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3209)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:353)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:344)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:976)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:938)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:138)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:385)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:311)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:203)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1364)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:118)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:118)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:342)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:648)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:342)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:555)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:15:59.872
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+D:\javaprogram\eclipse-jee-2023-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/backEnd/bootworkspace/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731543359871
+-Dlanguageserver.hover-timeout=225
+-jar
+D:\javaprogram\eclipse-jee-2023-12-R-win32-x86_64\eclipse\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:15:59.873
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:15:59.908
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 6004
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-11-14 09:16:03.117
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\admin'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:16:04.357
+!MESSAGE Boot project ADDED: Exam01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:16:04.358
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:16:04.359
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:16:04.360
+!MESSAGE Boot project ADDED: boot01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:16:04.360
+!MESSAGE Boot project ADDED: boot_board
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:16:04.361
+!MESSAGE Boot project ADDED: catch-erp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:16:04.361
+!MESSAGE Boot project ADDED: demo
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-14 09:16:04.362
+!MESSAGE Boot project ADDED: jpa
+
+!ENTRY org.eclipse.jface 2 0 2024-11-14 09:16:46.083
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-11-14 09:16:46.083
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(net.harawata.mybatipse.CopyLogStatement,Copy MyBatis Statement,
+		Copy MyBatis statement in the Console View as an executable SQL statement.,
+		Category(net.harawata.mybatipse.commandCategory,MyBatipse,null,true),
+		WorkbenchHandlerServiceHandler("net.harawata.mybatipse.CopyLogStatement"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:16:46.590
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:16:46.590
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:16:46.598
+!MESSAGE Failed to fetch type data for element witn key: Ljava/util/Set;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:16:46.599
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:16:46.608
+!MESSAGE Failed to fetch type data for element witn key: Lorg/apache/ibatis/type/JdbcType;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:16:46.608
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:16:46.611
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String[];
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:16:46.612
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:16:46.614
+!MESSAGE Failed to fetch type data for element witn key: Ljava/util/Map;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:16:46.614
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:01.404
+!MESSAGE Failed to fetch type data for element witn key: Lorg/springframework/boot/context/logging/LoggingApplicationListener;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:01.405
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:05.781
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:05.782
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:05.788
+!MESSAGE Failed to fetch type data for element witn key: Ljava/util/Set;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:05.789
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:05.802
+!MESSAGE Failed to fetch type data for element witn key: Lorg/apache/ibatis/type/JdbcType;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:05.803
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:05.807
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String[];
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:05.807
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:05.809
+!MESSAGE Failed to fetch type data for element witn key: Ljava/util/Map;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:05.810
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:47.656
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:47.657
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:47.662
+!MESSAGE Failed to fetch type data for element witn key: Ljava/util/Set;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:47.663
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:47.674
+!MESSAGE Failed to fetch type data for element witn key: Lorg/apache/ibatis/type/JdbcType;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:47.675
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:47.680
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String[];
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:47.681
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-14 09:17:47.685
+!MESSAGE Failed to fetch type data for element witn key: Ljava/util/Map;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-14 09:17:47.686
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+!SESSION 2024-11-15 14:38:33.974 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-11-15 14:38:43.689
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.eclemma.core 4 0 2024-11-15 14:38:43.923
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [312]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+       org.jacoco.report [949]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+              org.jacoco.core [948]
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2024-11-15 14:38:43.952
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [314]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.8.202311140945"; singleton:="true"
+       org.eclipse.eclemma.core [312]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+              org.jacoco.report [949]
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                     org.jacoco.core [948]
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-15 14:38:44.294
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.linuxtools.docker.core 4 0 2024-11-15 14:38:45.125
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.core [1135]
+  Unresolved requirement: Import-Package: org.glassfish.jersey.apache.connector
+    -> Export-Package: org.glassfish.jersey.apache.connector; bundle-symbolic-name="org.glassfish.jersey.connectors.jersey-apache-connector"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.client,jakarta.ws.rs.core,org.apache.http.client,org.apache.http.client.methods,org.apache.http.impl.client,org.glassfish.jersey.client,org.glassfish.jersey.client.spi,org.glassfish.jersey.internal.l10n,org.glassfish.jersey.internal.util,org.glassfish.jersey.spi"
+       org.glassfish.jersey.connectors.jersey-apache-connector [1164]
+         Unresolved requirement: Import-Package: org.glassfish.jersey.client; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.client; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.inject,jakarta.ws.rs,jakarta.ws.rs.client,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey,org.glassfish.jersey.client.inject,org.glassfish.jersey.client.spi,org.glassfish.jersey.http,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util,org.glassfish.jersey.internal.util.collection,org.glassfish.jersey.message,org.glassfish.jersey.message.internal,org.glassfish.jersey.spi"
+              org.glassfish.jersey.core.jersey-client [1165]
+                Unresolved requirement: Import-Package: org.glassfish.jersey.http; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.http; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core"
+                     org.glassfish.jersey.core.jersey-common [1166]
+                       Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+                Unresolved requirement: Import-Package: org.glassfish.jersey; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util"
+         Unresolved requirement: Import-Package: org.glassfish.jersey.client.innate; version="[3.1.0,4.0.0)"
+           -> Export-Package: org.glassfish.jersey.client.innate; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core,org.glassfish.jersey.client"
+  Unresolved requirement: Require-Bundle: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.5"
+    -> Bundle-SymbolicName: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.8"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.linuxtools.docker.ui 4 0 2024-11-15 14:38:45.131
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.docker.ui [1136]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=21))"
+  Unresolved requirement: Require-Bundle: org.eclipse.linuxtools.docker.core; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.linuxtools.docker.core; bundle-version="5.16.0.202409032037"; singleton:="true"
+       org.eclipse.linuxtools.docker.core [1135]
+         Unresolved requirement: Import-Package: org.glassfish.jersey.apache.connector
+           -> Export-Package: org.glassfish.jersey.apache.connector; bundle-symbolic-name="org.glassfish.jersey.connectors.jersey-apache-connector"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.client,jakarta.ws.rs.core,org.apache.http.client,org.apache.http.client.methods,org.apache.http.impl.client,org.glassfish.jersey.client,org.glassfish.jersey.client.spi,org.glassfish.jersey.internal.l10n,org.glassfish.jersey.internal.util,org.glassfish.jersey.spi"
+              org.glassfish.jersey.connectors.jersey-apache-connector [1164]
+                Unresolved requirement: Import-Package: org.glassfish.jersey.client; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.client; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.inject,jakarta.ws.rs,jakarta.ws.rs.client,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey,org.glassfish.jersey.client.inject,org.glassfish.jersey.client.spi,org.glassfish.jersey.http,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util,org.glassfish.jersey.internal.util.collection,org.glassfish.jersey.message,org.glassfish.jersey.message.internal,org.glassfish.jersey.spi"
+                     org.glassfish.jersey.core.jersey-client [1165]
+                       Unresolved requirement: Import-Package: org.glassfish.jersey.http; version="[3.1.0,4.0.0)"
+                         -> Export-Package: org.glassfish.jersey.http; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core"
+                            org.glassfish.jersey.core.jersey-common [1166]
+                              Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+                       Unresolved requirement: Import-Package: org.glassfish.jersey; version="[3.1.0,4.0.0)"
+                         -> Export-Package: org.glassfish.jersey; bundle-symbolic-name="org.glassfish.jersey.core.jersey-common"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,javax.net.ssl,org.glassfish.jersey.internal,org.glassfish.jersey.internal.inject,org.glassfish.jersey.internal.util"
+                Unresolved requirement: Import-Package: org.glassfish.jersey.client.innate; version="[3.1.0,4.0.0)"
+                  -> Export-Package: org.glassfish.jersey.client.innate; bundle-symbolic-name="org.glassfish.jersey.core.jersey-client"; bundle-version="3.1.8"; version="3.1.8"; uses:="jakarta.ws.rs.core,org.glassfish.jersey.client"
+         Unresolved requirement: Require-Bundle: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.5"
+           -> Bundle-SymbolicName: org.glassfish.jersey.core.jersey-client; bundle-version="3.1.8"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.glassfish.jersey.core.jersey-common 4 0 2024-11-15 14:38:45.146
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.glassfish.jersey.core.jersey-common [1166]
+  Unresolved requirement: Import-Package: org.glassfish.hk2.osgiresourcelocator; version="[1.0.0,2.0.0)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-15 14:38:59.991
+!MESSAGE Logback config file: D:\backEnd\bootworkspace\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-11-15 14:39:01.004
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-15 14:39:01.004
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-11-15 14:39:01.497
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-15 14:39:01.497
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.jface 2 0 2024-11-15 14:39:04.495
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-11-15 14:39:04.495
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 14:39:13.755
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+D:\javaprogram\eclipse-jee-2023-12-R-win32-x86_64\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Dspring.config.location=classpath:/application.properties
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/backEnd/bootworkspace/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1731649153754
+-Dlanguageserver.hover-timeout=225
+-jar
+D:\javaprogram\eclipse-jee-2023-12-R-win32-x86_64\eclipse\plugins\org.springframework.tooling.boot.ls_1.58.0.202410160331\servers\spring-boot-language-server\spring-boot-language-server-1.58.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:13.756
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 14:39:13.773
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 9196
+
+!ENTRY org.eclipse.jface 2 0 2024-11-15 14:39:15.893
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-11-15 14:39:15.893
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(net.harawata.mybatipse.CopyLogStatement,Copy MyBatis Statement,
+		Copy MyBatis statement in the Console View as an executable SQL statement.,
+		Category(net.harawata.mybatipse.commandCategory,MyBatipse,null,true),
+		WorkbenchHandlerServiceHandler("net.harawata.mybatipse.CopyLogStatement"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-11-15 14:39:16.880
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\admin'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.junit.core 4 0 2024-11-15 14:39:17.916
+!MESSAGE Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+!STACK 0
+java.lang.IllegalStateException: Unable to compute bundle location for 'org.hamcrest' with range [2.2.0,2.3.0)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport$JUnitPluginDescription.getLibraryEntry(BuildPathSupport.java:236)
+	at org.eclipse.jdt.internal.junit.buildpath.BuildPathSupport.getHamcrestLibraryEntry(BuildPathSupport.java:435)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.getNewContainer(JUnitContainerInitializer.java:147)
+	at org.eclipse.jdt.internal.junit.buildpath.JUnitContainerInitializer.initialize(JUnitContainerInitializer.java:108)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:3216)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:2164)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:3829)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3263)
+	at org.eclipse.jdt.internal.core.JavaProject.resolveClasspath(JavaProject.java:3427)
+	at org.eclipse.jdt.internal.core.JavaProject.getResolvedClasspath(JavaProject.java:2548)
+	at org.springframework.ide.eclipse.boot.core.BootPropertyTester.isBootProject(BootPropertyTester.java:130)
+	at org.springframework.ide.eclipse.boot.dash.model.BootProjectDashElementFactory.createOrGet(BootProjectDashElementFactory.java:53)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.ide.eclipse.boot.dash.model.LocalBootDashModel.doUpdateElementsFromWorkspace(LocalBootDashModel.java:312)
+	at org.springframework.ide.eclipse.boot.dash.model.LocalBootDashModel$5.run(LocalBootDashModel.java:299)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:18.228
+!MESSAGE Boot project ADDED: Exam01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:18.229
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:18.231
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:18.231
+!MESSAGE Boot project ADDED: boot01
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:18.232
+!MESSAGE Boot project ADDED: boot_board
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:18.233
+!MESSAGE Boot project ADDED: catch-erp
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:18.233
+!MESSAGE Boot project ADDED: demo
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-15 14:39:18.234
+!MESSAGE Boot project ADDED: jpa
+
+!ENTRY org.eclipse.e4.ui.workbench.swt 4 2 2024-11-15 14:39:30.457
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.e4.ui.workbench.swt".
+!STACK 0
+org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4918)
+	at org.eclipse.swt.SWT.error(SWT.java:4833)
+	at org.eclipse.swt.SWT.error(SWT.java:4804)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:450)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:370)
+	at org.eclipse.swt.widgets.Widget.checkParent(Widget.java:301)
+	at org.eclipse.swt.widgets.Widget.<init>(Widget.java:165)
+	at org.eclipse.swt.widgets.Control.<init>(Control.java:114)
+	at org.eclipse.swt.widgets.Scrollable.<init>(Scrollable.java:85)
+	at org.eclipse.swt.widgets.Composite.<init>(Composite.java:99)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$1.<init>(ContributedPartRenderer.java:86)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:86)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.createElement(PartServiceImpl.java:1313)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1274)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:397)
+	at org.eclipse.ui.internal.EditorReference.getEditor(EditorReference.java:283)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.lambda$0(LSPDiagnosticsToMarkers.java:94)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1707)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.accept(LSPDiagnosticsToMarkers.java:100)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.accept(LSPDiagnosticsToMarkers.java:1)
+	at org.eclipse.lsp4e.LanguageClientImpl.publishDiagnostics(LanguageClientImpl.java:103)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:314)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2024-11-15 14:39:30.458
+!MESSAGE Exception occurred while rendering: org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@5dd62f07 (tags: [Editor, removeOnHide, org.eclipse.buildship.ui.gradlebuildscripteditor], contributorURI: null) (widget: null, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@68bfaa16, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: null, context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.eclipse.buildship.ui.gradlebuildscripteditor (build.gradle) Context, variables: [], label: build.gradle, iconURI: platform:/plugin/org.eclipse.buildship.ui/icons/full/obj16/gradle_file.png, tooltip: null, dirty: false, closeable: true, description: null)
+!STACK 0
+org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4918)
+	at org.eclipse.swt.SWT.error(SWT.java:4833)
+	at org.eclipse.swt.SWT.error(SWT.java:4804)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:450)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:370)
+	at org.eclipse.swt.widgets.Widget.checkParent(Widget.java:301)
+	at org.eclipse.swt.widgets.Widget.<init>(Widget.java:165)
+	at org.eclipse.swt.widgets.Control.<init>(Control.java:114)
+	at org.eclipse.swt.widgets.Scrollable.<init>(Scrollable.java:85)
+	at org.eclipse.swt.widgets.Composite.<init>(Composite.java:99)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$1.<init>(ContributedPartRenderer.java:86)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:86)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.createElement(PartServiceImpl.java:1313)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1274)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:397)
+	at org.eclipse.ui.internal.EditorReference.getEditor(EditorReference.java:283)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.lambda$0(LSPDiagnosticsToMarkers.java:94)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1707)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.accept(LSPDiagnosticsToMarkers.java:100)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.accept(LSPDiagnosticsToMarkers.java:1)
+	at org.eclipse.lsp4e.LanguageClientImpl.publishDiagnostics(LanguageClientImpl.java:103)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:314)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 14:39:31.039
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-15 14:39:31.039
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 14:39:31.078
+!MESSAGE Failed to fetch type data for element witn key: Ljava/util/Set;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-15 14:39:31.078
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 14:39:31.089
+!MESSAGE Failed to fetch type data for element witn key: Lorg/apache/ibatis/type/JdbcType;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-15 14:39:31.090
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 14:39:31.094
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String[];
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-15 14:39:31.095
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 14:39:31.098
+!MESSAGE Failed to fetch type data for element witn key: Ljava/util/Map;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-15 14:39:31.098
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.eclipse.e4.ui.workbench.swt 4 2 2024-11-15 14:39:32.891
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.e4.ui.workbench.swt".
+!STACK 0
+org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4918)
+	at org.eclipse.swt.SWT.error(SWT.java:4833)
+	at org.eclipse.swt.SWT.error(SWT.java:4804)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:450)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:370)
+	at org.eclipse.swt.widgets.Widget.checkParent(Widget.java:301)
+	at org.eclipse.swt.widgets.Widget.<init>(Widget.java:165)
+	at org.eclipse.swt.widgets.Control.<init>(Control.java:114)
+	at org.eclipse.swt.widgets.Scrollable.<init>(Scrollable.java:85)
+	at org.eclipse.swt.widgets.Composite.<init>(Composite.java:99)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$1.<init>(ContributedPartRenderer.java:86)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:86)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.createElement(PartServiceImpl.java:1313)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1274)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:397)
+	at org.eclipse.ui.internal.EditorReference.getEditor(EditorReference.java:283)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.lambda$0(LSPDiagnosticsToMarkers.java:94)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1707)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.accept(LSPDiagnosticsToMarkers.java:100)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.accept(LSPDiagnosticsToMarkers.java:1)
+	at org.eclipse.lsp4e.LanguageClientImpl.publishDiagnostics(LanguageClientImpl.java:103)
+	at jdk.internal.reflect.GeneratedMethodAccessor55.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:314)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2024-11-15 14:39:32.892
+!MESSAGE Exception occurred while rendering: org.eclipse.e4.ui.compatibility.editor=org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl@5dd62f07 (tags: [Editor, removeOnHide, org.eclipse.buildship.ui.gradlebuildscripteditor], contributorURI: null) (widget: null, renderer: org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer@68bfaa16, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null) (contributionURI: bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor, object: null, context: PartImpl (org.eclipse.e4.ui.compatibility.editor)  removeOnHide org.eclipse.buildship.ui.gradlebuildscripteditor (build.gradle) Context, variables: [], label: build.gradle, iconURI: platform:/plugin/org.eclipse.buildship.ui/icons/full/obj16/gradle_file.png, tooltip: null, dirty: false, closeable: true, description: null)
+!STACK 0
+org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4918)
+	at org.eclipse.swt.SWT.error(SWT.java:4833)
+	at org.eclipse.swt.SWT.error(SWT.java:4804)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:450)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:370)
+	at org.eclipse.swt.widgets.Widget.checkParent(Widget.java:301)
+	at org.eclipse.swt.widgets.Widget.<init>(Widget.java:165)
+	at org.eclipse.swt.widgets.Control.<init>(Control.java:114)
+	at org.eclipse.swt.widgets.Scrollable.<init>(Scrollable.java:85)
+	at org.eclipse.swt.widgets.Composite.<init>(Composite.java:99)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$1.<init>(ContributedPartRenderer.java:86)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:86)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:995)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:763)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:712)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.createElement(PartServiceImpl.java:1313)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1274)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:397)
+	at org.eclipse.ui.internal.EditorReference.getEditor(EditorReference.java:283)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.lambda$0(LSPDiagnosticsToMarkers.java:94)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1707)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.accept(LSPDiagnosticsToMarkers.java:100)
+	at org.eclipse.lsp4e.operations.diagnostics.LSPDiagnosticsToMarkers.accept(LSPDiagnosticsToMarkers.java:1)
+	at org.eclipse.lsp4e.LanguageClientImpl.publishDiagnostics(LanguageClientImpl.java:103)
+	at jdk.internal.reflect.GeneratedMethodAccessor55.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:314)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 15:24:29.279
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-15 15:24:29.280
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 15:25:13.901
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String;
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-15 15:25:13.902
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-15 15:25:13.904
+!MESSAGE Failed to fetch type data for element witn key: Ljava/lang/String[];
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-11-15 15:25:13.905
+!MESSAGE Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+!STACK 0
+java.lang.Exception: Resolve classpath: unable to resolve a project from : file:/D:/%EC%B5%9C%EC%A2%85%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/catch-erp
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getProject(ResourceUtils.java:66)
+	at org.springframework.tooling.jdt.ls.commons.resources.ResourceUtils.getJavaProject(ResourceUtils.java:37)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.findElement(JavaData.java:79)
+	at org.springframework.tooling.jdt.ls.commons.java.JavaData.typeData(JavaData.java:67)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$16(STS4LanguageClientImpl.java:521)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)

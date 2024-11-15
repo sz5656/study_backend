@@ -12,6 +12,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\최종프로젝트\catch-erp"/>
 			<item value="C:\Users\admin\Desktop\Exam01"/>
 		</list>
 	</section>
